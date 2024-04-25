@@ -1,16 +1,12 @@
 /* NavBar.css */
 
 .navbar {
-  background: url(../../../public/ImagendeFondo.jpeg);
-  background: transparent;
-  background-color: rgba(100, 232, 129, 0.42);
-  backdrop-filter: blur(10px);
-  
+  background-color: #84b6f4;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  
+
   padding: 10px 20px;
   margin-bottom: 20px;
 }
@@ -41,7 +37,7 @@
   left: -250px;
   width: 250px;
   height: 100%;
-  background-color: #fdfd96;
+  background-color: #84b6f4;
   transition: left 0.3s ease;
 }
 
@@ -49,9 +45,11 @@
   left: 0;
 }
 
+/* Estilos mejorados para Sidebar-List */
 .sidebar-list {
   list-style: none;
   padding: 0;
+  margin-top: 20px;
 }
 
 .sidebar-item {
@@ -61,8 +59,18 @@
 .sidebar-item a {
   display: block;
   padding: 10px 20px;
-  color: #434343;
+  color: #333; /* Color de los enlaces */
   text-decoration: none;
+  transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+}
+
+.sidebar-item a:hover {
+  background-color: #ddd; /* Cambio de color de fondo al pasar el ratón sobre el enlace */
+  color: #000; /* Cambio de color del texto al pasar el ratón sobre el enlace */
+}
+
+.sidebar-icon {
+  margin-right: 10px; /* Espaciado a la derecha del icono */
 }
 
 .close-btn {
@@ -77,22 +85,21 @@
 }
 
 .user-info {
+  text-align: center; 
   color: #434343;
   text-align: center;
   padding: 20px 0;
 }
 
 .avatar {
-  width: 100px;
-  height: 100px;
+  width: 100px; /* Ancho del avatar */
+  height: 100px; /* Alto del avatar */
   border-radius: 50%;
-  margin-bottom: 10px;
 }
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   .navbar-toggle {
-    
     font-size: 1.5rem;
   }
 
@@ -109,5 +116,3 @@
     display: block;
   }
 }
-
-  
