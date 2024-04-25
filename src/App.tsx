@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './components/navBar';
-import Filtro from './components/filtro';
+import NavBar from './components/NavBar/navBar';
+import Filtro from './Filtro/filtro';
 
 const App: React.FC = () => {
   return (

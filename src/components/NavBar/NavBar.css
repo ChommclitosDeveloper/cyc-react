@@ -1,0 +1,105 @@
+/* NavBar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(45deg, #ffd84b, #4abce5, #f57e3e);
+  color: white;
+  padding: 10px 20px;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  margin-left: 20px;
+}
+
+.navbar-logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.navbar-toggle {
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-image: linear-gradient(45deg, #ffd84b, #4abce5, #f57e3e);
+  transition: left 0.3s ease;
+}
+
+.sidebar.show {
+  left: 0;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-item {
+  margin-bottom: 10px;
+}
+
+.sidebar-item a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.user-info {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    
+    font-size: 1.5rem;
+  }
+
+  .sidebar {
+    width: 80%;
+    left: -80%;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  .close-btn {
+    display: block;
+  }
+}
+
+  
