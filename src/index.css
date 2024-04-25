@@ -11,3 +11,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.padre{
+  width:auto
+}
+
+.filtro-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filtro-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px; /* Puedes ajustar este valor según tus necesidades */
+}
+
+.filtro-form input {
+  flex: 1;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.filtro-form select {
+  flex: 1;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.filtro-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilos adicionales para hacerlo responsive */
+@media (max-width: 768px) {
+  .filtro-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filtro-form input,
+  .filtro-form select,
+  .filtro-form button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}

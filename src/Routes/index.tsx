@@ -1,15 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Filtro from '../components/filtro';
 
-
-const Routes: React.FC = () => {
+const RoutesComponent: React.FC = () => {
   return (
     <Router>
       <Routes>
-        
+        <Route path="/filtro" element={<Filtro />} />
       </Routes>
     </Router>
   );
 };
 
-export default Routes;
+export default RoutesComponent;
