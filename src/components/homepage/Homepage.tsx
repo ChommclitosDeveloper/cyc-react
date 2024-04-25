@@ -19,13 +19,13 @@ const Homepage = () => {
 
       <div className="grid-container">
 
-        <div className="grid-item">
+        <div className="grid-item-1">
           <h2>¡Entra y conoce las recetas que tenemos para ti!</h2>
           <p>Puedes seleccionar una region de colombia para consultar las principales recetas que hay</p>
           <img src="/regiones_colombia.jpg" alt="Imagen 1" />
         </div>
         
-        <div className="grid-item">
+        <div className="grid-item-2">
           <h2>Recetas personalizadas</h2>
           <p>¡Puedes crear tus propias recetas aqui!</p>
           <img src="/recetas_personalizadas.jpeg" alt="Imagen 2" />
