@@ -73,6 +73,12 @@
   margin-right: 10px; /* Espaciado a la derecha del icono */
 }
 
+.sidebar-divider {
+  height: 1px; /* Altura del divisor */
+  background-color: #434343; /* Color del divisor */
+  margin: 10px 10px; /* Espaciado alrededor del divisor */
+}
+
 .close-btn {
   position: absolute;
   top: 10px;

@@ -35,6 +35,7 @@ const NavBar: React.FC = () => {
           <h2>Bienvenido, Usuario</h2>
           <FontAwesomeIcon icon={faUser} size="5x" className="avatar" />
         </div>
+        <div className="sidebar-divider"></div>
         <ul className="sidebar-list">
           <NavItem to="/editar-perfil" icon={faUser} onClick={toggleSidebar}>
             Editar Perfil
