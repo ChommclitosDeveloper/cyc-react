@@ -1,9 +1,19 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import './filtro.css';
 
 const Filtro: React.FC = () => {
   return (
+    
     <div className="filtro-container">
+      <div className="go-back-button">
+        <Link to="/ruta-anterior" className="icon">
+          <FontAwesomeIcon icon={faArrowLeft} />
+          <span>Regresar</span>
+        </Link>
+      </div>
       <form className="filtro-form">
         <input type="text" placeholder="Buscar..." />
         <select>
@@ -18,3 +28,4 @@ const Filtro: React.FC = () => {
 };
 
 export default Filtro;
+

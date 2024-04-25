@@ -1,12 +1,18 @@
 /* NavBar.css */
 
 .navbar {
+  background: url(../../../public/ImagendeFondo.jpeg);
+  background: transparent;
+  background-color: rgba(100, 232, 129, 0.42);
+  backdrop-filter: blur(10px);
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: linear-gradient(45deg, #ffd84b, #4abce5, #f57e3e);
-  color: white;
+  
+  
   padding: 10px 20px;
+  margin-bottom: 20px;
 }
 
 .navbar-container {
@@ -19,13 +25,14 @@
 }
 
 .navbar-logo a {
-  color: white;
+  color: #434343;
   text-decoration: none;
   font-size: 1.5rem;
 }
 
 .navbar-toggle {
   cursor: pointer;
+  color: #434343;
 }
 
 .sidebar {
@@ -34,7 +41,7 @@
   left: -250px;
   width: 250px;
   height: 100%;
-  background-image: linear-gradient(45deg, #ffd84b, #4abce5, #f57e3e);
+  background-color: #fdfd96;
   transition: left 0.3s ease;
 }
 
@@ -54,7 +61,7 @@
 .sidebar-item a {
   display: block;
   padding: 10px 20px;
-  color: white;
+  color: #434343;
   text-decoration: none;
 }
 
@@ -64,12 +71,13 @@
   right: 10px;
   background: transparent;
   border: none;
-  color: white;
+  color: #434343;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
 .user-info {
+  color: #434343;
   text-align: center;
   padding: 20px 0;
 }

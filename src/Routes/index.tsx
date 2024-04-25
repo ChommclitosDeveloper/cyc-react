@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Filtro from '../Filtro/filtro';
+import Filtro from '../components/Filtro/filtro';
 
 const RoutesComponent: React.FC = () => {
   return (
