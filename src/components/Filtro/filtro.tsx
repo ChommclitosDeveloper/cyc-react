@@ -7,12 +7,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 import "./filtro.css";
 
 const Filtro: React.FC = () => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
+
+  const navigate = useNavigate();
+
+  const handlePreparacionClick = () => {
+    navigate('/preparacion'); // Navigate to register route on click
+  };
 
   // Array de imágenes de ejemplo
   const images = [
@@ -37,7 +44,7 @@ const Filtro: React.FC = () => {
   return (
     <div className="filtro-container">
       <div className="go-back-button">
-        <Link to="/ruta-anterior" className="icon">
+        <Link to="/regiones" className="icon">
           <FontAwesomeIcon icon={faArrowLeft} />
           <span>Regresar</span>
         </Link>
@@ -109,7 +116,7 @@ const Filtro: React.FC = () => {
         <li><strong>Nivel de dificultad:</strong> Fácil</li>
         <li><strong>Duración Total:</strong> 60 minutos</li>
       </ul>
-      <button className="read-more-button">Leer más</button>
+      <button className="read-more-button" onClick={handlePreparacionClick}>Leer más</button>
     </div>
     </div>
   );

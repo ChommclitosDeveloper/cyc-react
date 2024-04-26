@@ -1,14 +1,22 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import { TiArrowBack } from "react-icons/ti";
 import { GiNetworkBars } from "react-icons/gi";
 import './Preparacion.css'
 
 
 const Preparacion = () => {
+
+const navigate = useNavigate();
+
+  const handleFiltroClick = () => {
+    navigate('/filtro'); // Navigate to register route on click
+  };
+
   return (
     <div>
         <div className='botones-head'>
-        <button className='regresar'>
+        <button className='regresar' onClick={handleFiltroClick}>
             <div className='icon'><TiArrowBack /></div>
             <div>Regresar</div>
         </button>

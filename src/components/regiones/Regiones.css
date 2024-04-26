@@ -26,7 +26,7 @@
   }
 
   .region-item-1 {
-    background: transparent;
+    /* background: transparent;
     background: rgba(255, 255, 255, 0.575);
     box-shadow: 0 0 10px rgb(0, 0, 0);
     backdrop-filter: blur(10px);
@@ -35,7 +35,18 @@
     cursor: pointer;
     outline: none;
     border: none;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease; */
+  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  width: 400px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
   }
 
   .region-item-1:hover {

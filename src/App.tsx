@@ -23,6 +23,7 @@ const AppContent: React.FC = () => {
         <Route path="/register" element={<Register/>} />
         <Route path="/regiones" element={<Regiones/>} />
         <Route path="/personalizadas" element={<Personalizadas/>} />
+        <Route path="/preparacion" element={<Preparacion/>} />
       </Routes>
     </div>
   );
