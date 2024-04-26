@@ -6,6 +6,21 @@
     box-sizing: border-box;
   }
 
+<<<<<<< Updated upstream
+=======
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    
+    
+    min-height: 100vh;
+    /* background: url('/public/paisajelogin.jpg') no-repeat; */
+    background-size: cover;
+    background-position: center;
+  }
+  
+
+>>>>>>> Stashed changes
 .wrapper{
     width: 420px;
     background: transparent;
