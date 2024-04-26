@@ -10,8 +10,7 @@
     margin: 0;
     font-family: 'Poppins', sans-serif;
     
-    justify-content: center;
-    align-items: center;
+    
     min-height: 100vh;
     background: url('/public/paisajelogin.jpg') no-repeat;
     background-size: cover;
