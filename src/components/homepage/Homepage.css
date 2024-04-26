@@ -19,9 +19,9 @@
   }
   
   /* Estilos para el contenedor de la grilla */
-  .grid-container {
+  .grid-container-homepage {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     max-width: 60rem;
     margin: 0 auto;
@@ -35,6 +35,14 @@
     backdrop-filter: blur(10px);
     padding: 1rem;
     border-radius: 0.5rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: transform 0.4s ease;
+  }
+
+  .grid-item-1:hover{
+    transform: scale(1.05);
   }
   
   /* Estilos para los títulos de los elementos de la grilla */
@@ -49,7 +57,7 @@
     font-size: 1rem;
     color: #444;
     text-align: center;
-    margin: 10px 10px;
+    margin: 20px 10px;
   }
   
   /* Estilos para las imágenes de los elementos de la grilla */
@@ -66,6 +74,14 @@
     backdrop-filter: blur(10px);
     padding: 1rem;
     border-radius: 0.5rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: transform 0.4s ease;
+  }
+
+  .grid-item-2:hover{
+    transform: scale(1.05);
   }
   
   /* Estilos para los títulos de los elementos de la grilla */
@@ -73,6 +89,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
+    padding-top: 1rem;
   }
   
   /* Estilos para los párrafos de los elementos de la grilla */
@@ -80,7 +97,8 @@
     font-size: 1rem;
     color: #444;
     text-align: center;
-    padding-top: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
   
   /* Estilos para las imágenes de los elementos de la grilla */

@@ -4,18 +4,13 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
   }
-  
-  body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background: url(/public/paisajelogin.jpg);
-      background-size: cover;
-      background-position: center;
+
+  .fondo{
+    background-image: url(/public/ImagendeFondo.jpeg);
+    background-size: cover;
   }
   
-  .container-form {
+  .container-form-register{
     display: flex;
     border-radius: 20px;
     box-shadow: 0 5px 7px rgba(0, 0, 0, .1);
@@ -94,7 +89,9 @@
   }
   
   .icons {
-    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .icons i {
@@ -112,7 +109,7 @@
     background-color: #c7c7f3;
     color: #fff;
   }
-  
+
   .form {
     margin: 30px 0 0 0;
   }

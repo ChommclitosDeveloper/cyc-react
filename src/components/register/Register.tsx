@@ -13,8 +13,8 @@ const Register = () => {
   };
 
   return (
-    <div>
-            <div className="container-form register">
+    <div className="fondo">
+            <div className="container-form-register">
                 <div className="information">
                     <div className="info-childs">
                         <h2>Bienvenido</h2>
@@ -28,7 +28,7 @@ const Register = () => {
                     <div className="form-information-childs">
                         <h2>Crear una Cuenta</h2>
                         <div className="icons">
-                            <i className=''><FaGoogle className='icon'/></i>
+                            <i className=''><FaGoogle/></i>
                             <i className=''><FaGithub/></i>
                             <i className=''><FaLinkedinIn/></i>
                         </div>
@@ -36,7 +36,7 @@ const Register = () => {
                         <form className="form form-register" noValidate>
                             <div>
                                 <label>
-                                    <i className=''><FaUser className='icon'/></i>
+                                    <i className=''><FaUser/></i>
                                     <input type="text" placeholder="Nombre Usuario" name="userName" />
                                 </label>
                             </div>
@@ -48,7 +48,7 @@ const Register = () => {
                             </div>
                             <div>
                                 <label>
-                                    <i className=''><FaLock className='icon'/></i>
+                                    <i className=''><FaLock/></i>
                                     <input type="password" placeholder="Contraseña" name="userPassword" />
                                 </label>
                             </div>

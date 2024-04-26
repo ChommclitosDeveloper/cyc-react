@@ -15,6 +15,7 @@ const Login = () => {
   };
 
   return (
+    <div>
     <div className='wrapper'>
       <form action="">
         <h1>Login</h1>
@@ -43,6 +44,7 @@ const Login = () => {
           <p>¿No tienes una cuenta? <span className='registro' onClick={handleRegisterClick} >Registrarse</span></p>
         </div>
       </form>
+    </div>
     </div>
   );
 };
