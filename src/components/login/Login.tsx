@@ -15,7 +15,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="fondo-login">
     <div className='wrapper'>
       <form action="">
         <h1>Login</h1>

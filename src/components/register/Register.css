@@ -5,9 +5,13 @@
     font-family: 'Montserrat', sans-serif;
   }
 
-  .fondo{
+  .fondo-registro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url(/public/ImagendeFondo.jpeg);
     background-size: cover;
+    height: 100vh;
   }
   
   .container-form-register{

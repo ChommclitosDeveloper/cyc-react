@@ -7,6 +7,7 @@ import Homepage from './components/homepage/Homepage';
 import Regiones from './components/regiones/Regiones';
 import Personalizadas from './components/personalizadas/Personalizadas';
 import Register from './components/register/Register';
+import Preparacion from './components/preparacion/Preparacion';
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
           <Route path="/register" element={<Register/>} />
           <Route path="/regiones" element={<Regiones/>} />
           <Route path="/personalizadas" element={<Personalizadas/>} />
+          <Route path="/preparacion" element={<Preparacion/>}/>
         </Routes>
       </div>
     </Router>

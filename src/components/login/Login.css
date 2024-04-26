@@ -6,21 +6,15 @@
     box-sizing: border-box;
   }
 
-<<<<<<< Updated upstream
-=======
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    
-    
-    min-height: 100vh;
-    /* background: url('/public/paisajelogin.jpg') no-repeat; */
+.fondo-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/public/ImagendeFondo.jpeg);
     background-size: cover;
-    background-position: center;
-  }
-  
+    height: 100vh;
+}
 
->>>>>>> Stashed changes
 .wrapper{
     width: 420px;
     background: transparent;

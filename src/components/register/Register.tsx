@@ -12,8 +12,12 @@ const Register = () => {
     navigate('/login'); // Navigate to register route on click
   };
 
+  const handleHomepageClick = () =>{
+    navigate('/');
+  };
+
   return (
-    <div className="fondo">
+    <div className="fondo-registro">
             <div className="container-form-register">
                 <div className="information">
                     <div className="info-childs">
@@ -53,7 +57,7 @@ const Register = () => {
                                 </label>
                             </div>
 
-                            <input type="submit" value="Registrarse" />
+                            <input type="submit" value="Registrarse" onClick={handleHomepageClick}/>
                           
                         </form>
                     </div>
