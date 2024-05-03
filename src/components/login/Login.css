@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
 
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
   }
 
 .fondo-login {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(/public/ImagendeFondo.jpeg);
+    background-image: url(/public/RegisterAndLogin.jpg);
     background-size: cover;
     height: 100vh;
 }
@@ -20,7 +20,7 @@
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 8px rgba(3, 174, 0, 0.799);
     color: #000000;
     border-radius: 10px;
     padding: 30px 40px;
@@ -31,7 +31,7 @@
 .wrapper h1{
     font-size: 36px;
     text-align: center;
-    color: #333;
+    color: rgb(0, 150, 30);
 }
 
 .wrapper .input-box {
@@ -46,7 +46,7 @@
   }
   
 .icons i {
-    border-radius: 40%;
+    border-radius: 30%;
     padding: 15px;
     cursor: pointer;
     margin: 0 10px;
@@ -65,7 +65,7 @@
     width: 100%;
     height: 100%;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     outline: none;
     border-radius: 40px;
     font-size: 16px;
@@ -98,7 +98,7 @@
 }
 
 .remember-forgot a{
-    color: #fff;
+    color: rgb(0, 150, 30);
     text-decoration: none;
 }
 
@@ -109,19 +109,27 @@
 .wrapper button {
     width: 100%;
     height: 45px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    background: #333;
+    background: transparent;
+    box-shadow: 0 0 10px rgba(3, 174, 0, 0.799);
     border: none;
     outline: none;
     border-radius: 40px;
     cursor: pointer;
     font-size: 16px;
-    color: #333;
+    color: rgb(0, 150, 30);
     font-weight: 700;
 }
 
+.wrapper button:hover {
+    background-color: rgb(0, 150, 30);
+    color: #000000;
+    box-shadow: 0 0 10px rgba(122, 255, 104, 0.799);
+    transition: 0.3s;
+}
+
 .registro {
-    color: #fff;
+    color: rgb(0, 150, 30);
 }
 
 .registro:hover {

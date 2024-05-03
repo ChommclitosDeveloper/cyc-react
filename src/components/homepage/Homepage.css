@@ -1,31 +1,41 @@
 /* Estilos para el header */
 
+.homepage {
+  background: url(/public/RegisterAndLogin.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
 .header {
     text-align: center;
   }
 
   .header h1 {
+    padding-top: 2rem;
     display: flex;
     justify-content: center;
     font-size: 2em;
+    color: #fff;
   }
 
   .header p {
     display: flex;
     justify-content: center;
     font-size: 1.5em;
+    color: #d8d8d8;
   }
 
   .grid-container-homepage {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
     max-width: 60rem;
-    margin: 0 auto;
+    margin: auto;
+    padding-left: 1rem;
   }
   
   /* Estilos para los elementos de la grilla */
   .grid-item-1 {
+    
     background: rgba(255, 255, 255, 0.575);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     outline: none;

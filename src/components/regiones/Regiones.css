@@ -1,20 +1,24 @@
+.regiones {
+  background: url(/public/RegisterAndLogin.jpg);
+  background-size: cover;
+}
+
 .header {
     text-align: center;
     padding-bottom: 3em;
   }
   
-  /* Estilos para el título */
   .title {
     font-size: 2.5rem;
     font-weight: bold;
     padding-top: 0.75rem;
+    color: #fff;
   }
   
-  /* Estilos para el subtítulo */
   .subtitle {
     font-size: 1.4rem;
-    color: #666;
     padding-top: 0.5rem;
+    color: #d8d8d8;
   }
 
   .grid-container-regiones {
@@ -26,17 +30,6 @@
   }
 
   .region-item-1 {
-    /* background: transparent;
-    background: rgba(255, 255, 255, 0.575);
-    box-shadow: 0 0 10px rgb(0, 0, 0);
-    backdrop-filter: blur(10px);
-    padding: 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    transition: transform 0.4s ease; */
-  
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   outline: none;
   border: none;
@@ -59,7 +52,6 @@
     text-align: center;
   }
   
-  /* Estilos para los párrafos de los elementos de la grilla */
   .region-item-1 p {
     font-size: 1rem;
     color: #444;
@@ -67,7 +59,6 @@
     margin: 20px 10px;
   }
   
-  /* Estilos para las imágenes de los elementos de la grilla */
   .region-item-1 img {
     width: 100%;
     height: auto;

@@ -17,7 +17,7 @@ const Login = () => {
   return (
     <div className="fondo-login">
     <div className='wrapper'>
-      <form action="">
+      <form action="title">
         <h1>Login</h1>
         <div className="icons">
           <i className=''><FaGoogle/></i>
