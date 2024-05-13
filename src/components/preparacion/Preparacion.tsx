@@ -43,28 +43,24 @@ const navigate = useNavigate();
 
                 <div className='ingredientes'>
                 <h3>Ingredientes</h3>
-
-                    <div className='radio'>
-                        <label>
-                            <input type="checkbox" name="option1" id=""/>
-                            Ingrediente 1
-                        </label>
+                    <div className='checkboxes'>
+                        <div className='radio'>
+                            <input type="checkbox" name="" id="cb1"/>
+                            <label htmlFor="cb1">Ingrediente 1</label>
+                        </div>
+                        <div className='radio'>
+                            <input type="checkbox" name="" id="cb2"/>
+                            <label htmlFor="cb2">Ingrediente 2</label>
+                        </div>
+                        <div className='radio'>
+                            <input type="checkbox" name="" id="cb3"/>
+                            <label htmlFor="cb3">Ingrediente 3</label>
+                        </div>
+                        <div className='radio'>
+                            <input type="checkbox" name="" id="cb4"/>
+                            <label htmlFor="cb4">Ingrediente 4</label>
+                        </div>
                     </div>
-
-                    <div className='radio'>
-                        <label>
-                            <input type="checkbox" name="option2" id=""/>
-                            Ingrediente 2
-                        </label>
-                    </div>
-
-                    <div className='radio'>
-                        <label>
-                            <input type="checkbox" name="option3" id=""/>
-                            Ingrediente 3
-                        </label>
-                    </div>
-
                     <div className='img'>
                         <img src="ImagendeFondo.jpeg" alt="" />
                     </div>
