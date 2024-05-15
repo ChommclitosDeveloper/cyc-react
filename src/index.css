@@ -12,7 +12,29 @@ code {
     monospace;
 }
 
-.padre{
-  width:100%
+/* App.css */
+
+.padre {
+  
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
+  position: relative; /* Necesario para que los elementos posicionales funcionen correctamente */
+}
+
+.padres {
+  transition: transform 0.3s ease;
+   /* Ajusta el espacio interior del contenido */
+  box-sizing: border-box;
+  width: 100%; /* Incluye el padding y el border en el tamaño total del elemento */
+}
+
+.padres.sidebar-open {
+  transform: translateX(250px); /* Desplazar a la derecha */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .padres.sidebar-open {
+    transform: translateX(80%); /* Ajusta el desplazamiento para pantallas más pequeñas */
+  }
 }
 

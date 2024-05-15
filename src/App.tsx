@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import NavBar from './components/NavBar/navBar';
 import Filtro from './components/Filtro/filtro';
@@ -13,10 +13,12 @@ import Formulario from './components/Formulario/formulario';
 const AppContent: React.FC = () => {
   const location = useLocation();
   const hideNavBar = location.pathname === '/login' || location.pathname === '/register';
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <div className='padre'>
-      {!hideNavBar && <NavBar />}
+      {!hideNavBar && <NavBar onSidebarToggle={setIsSidebarOpen} />}
+      <div className={`padres ${isSidebarOpen ? 'sidebar-open' : ''}`}>
       <Routes>
         <Route path="/filtro" element={<Filtro />} />
         <Route path='/' element={<Homepage/>}/>
@@ -27,6 +29,7 @@ const AppContent: React.FC = () => {
         <Route path="/preparacion" element={<Preparacion/>} />
         <Route path="/formulario" element={<Formulario/>} />
       </Routes>
+      </div>
     </div>
   );
 };

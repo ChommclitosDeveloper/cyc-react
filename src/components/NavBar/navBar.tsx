@@ -10,11 +10,18 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./NavBar.css"; // Estilos CSS para el NavBar
 
-const NavBar: React.FC = () => {
+interface NavBarProps {
+  onSidebarToggle: (isSidebarOpen: boolean) => void;
+}
+
+const NavBar: React.FC<NavBarProps> = ({ onSidebarToggle }) => {
   const [showSidebar, setShowSidebar] = useState(false);
 
   const toggleSidebar = () => {
-    setShowSidebar(!showSidebar);
+    const newSidebarState = !showSidebar;
+    setShowSidebar(newSidebarState);
+    onSidebarToggle(newSidebarState);
+    
   };
 
   return (
