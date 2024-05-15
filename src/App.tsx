@@ -9,6 +9,7 @@ import Personalizadas from './components/personalizadas/Personalizadas';
 import Register from './components/register/Register';
 import Preparacion from './components/preparacion/Preparacion';
 import Formulario from './components/Formulario/formulario';
+import ValorNutricional from './components/valornutricional/ValorNutricional';
 
 const AppContent: React.FC = () => {
   const location = useLocation();
@@ -28,6 +29,7 @@ const AppContent: React.FC = () => {
         <Route path="/personalizadas" element={<Personalizadas/>} />
         <Route path="/preparacion" element={<Preparacion/>} />
         <Route path="/formulario" element={<Formulario/>} />
+        <Route path="/nutricion" element={<ValorNutricional/>} />
       </Routes>
       </div>
     </div>

@@ -163,7 +163,7 @@
     transform: rotate(-55deg);
 }
 
-input[type="checkbox"] {
+.radio input[type="checkbox"] {
 	display: none;
 }
 
