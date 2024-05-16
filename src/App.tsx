@@ -11,6 +11,7 @@ import Preparacion from './components/preparacion/Preparacion';
 import Formulario from './components/Formulario/formulario';
 import FloatingButton from './components/FloatingButton/FloatingButton';
 import ValorNutricional from './components/valornutricional/ValorNutricional';
+import Reseña from './components/reseñahistorica/Reseña';
 
 const AppContent: React.FC = () => {
   const location = useLocation();
@@ -31,6 +32,7 @@ const AppContent: React.FC = () => {
         <Route path="/preparacion" element={<Preparacion/>} />
         <Route path="/formulario" element={<Formulario/>} />
         <Route path="/nutricion" element={<ValorNutricional/>} />
+        <Route path="/reseña historica" element={<Reseña/>} />
       </Routes>
       </div>
       {!hideNavBar && <FloatingButton />} {/* Añadir el botón flotante */}

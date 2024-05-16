@@ -1,0 +1,44 @@
+
+
+.btn-preparacion {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border: solid 2px;
+    border-radius: 2rem;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+}
+
+.btn-preparacion:hover {
+    background-color: rgb(71, 182, 182);
+    border-radius: 2rem;
+    border: solid 2px;
+    padding: 0 20px;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.btn-resena-historica {
+    background-color: rgb(71, 182, 182);
+    border-radius: 2rem;
+    border: solid 2px;
+    padding: 0 20px;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.resena {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.resena h1 {
+    padding-bottom: 1rem;
+}
+
+.resena p {
+    padding-bottom: 1rem;
+}

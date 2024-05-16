@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { TiArrowBack } from "react-icons/ti";
-import './ValorNutricional.css'
+import './ValorNutricional.css';
+import LinesChart from './BarsChart';
 
 const ValorNutricional = () => {
 
@@ -29,9 +30,12 @@ const ValorNutricional = () => {
           <button className='btn-pdf'>PDF</button>
         </div>
 
+        <div className='grafico'>
+          <LinesChart/>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ValorNutricional
+export default ValorNutricional;

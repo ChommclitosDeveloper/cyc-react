@@ -17,8 +17,12 @@ const navigate = useNavigate();
     navigate('/nutricion'); // Navigate to register route on click
   };
 
+  const handleReseñaClick = () => {
+    navigate('/reseña historica'); // Navigate to register route on click
+  };
+
   return (
-    <div>
+    <div className='fondo'>
         <div className='botones-head'>
         <button className='regresar' onClick={handleFiltroClick}>
             <div className='icon'><TiArrowBack /></div>
@@ -37,7 +41,7 @@ const navigate = useNavigate();
                 <button className='preparacion' >
                     <h1>Preparacion</h1>
                 </button>
-                <button className='resena-historica'>
+                <button className='resena-historica' onClick={handleReseñaClick}>
                     <h1>Reseña Historica</h1>
                 </button>
             </div>
