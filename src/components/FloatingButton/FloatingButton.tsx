@@ -9,6 +9,7 @@ import PrintIcon from '@mui/icons-material/Print';
 import ShareIcon from '@mui/icons-material/Share';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'; // Importa el ícono de regresar
 import { useNavigate } from 'react-router-dom';// Importa useHistory para manejar el historial de navegación
+import { Hidden } from '@mui/material';
 
 const actions = [
   { icon: <ArrowBackIcon />, name: 'Back' } // Agrega la acción de regresar
@@ -26,7 +27,7 @@ export default function ControlledOpenSpeedDial() {
   };
 
   return (
-    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1, position:'fixed', bottom:-150, right:16, zIndex:1000 }}>
+    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1, position:'fixed', bottom:-150, right:16, zIndex:1000, overflowY:'hidden' }}>
       <SpeedDial
         ariaLabel="SpeedDial controlled open example"
         sx={{   }}

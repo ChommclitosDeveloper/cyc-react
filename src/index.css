@@ -15,12 +15,14 @@ code {
 /* App.css */
 
 .padre {
+   /* Evita el desbordamiento horizontal */
   
   overflow-x: hidden; /* Evita el desbordamiento horizontal */
   position: relative; /* Necesario para que los elementos posicionales funcionen correctamente */
 }
 
 .padres {
+  overflow-y: hidden;
   transition: transform 0.3s ease;
    /* Ajusta el espacio interior del contenido */
   box-sizing: border-box;
