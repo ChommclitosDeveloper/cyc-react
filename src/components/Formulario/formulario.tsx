@@ -1,89 +1,132 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
+import { Stepper, Step, StepLabel, Button, Typography, TextField, Box } from '@mui/material';
 
-const Formulario: React.FC = () => {
-  // Estado para almacenar los datos del formulario en las tres páginas
-  const [formData, setFormData] = useState({
-    nombre: '',
-    apellido: '',
-    email: '',
+const steps = ['Step 1', 'Step 2', 'Step 3'];
+
+interface FormValues {
+  step1Field: string;
+  step2Field: string;
+  step3Field: string;
+}
+
+const FormStepper: React.FC = () => {
+  const [activeStep, setActiveStep] = useState(0);
+  const [formValues, setFormValues] = useState<FormValues>({
+    step1Field: '',
+    step2Field: '',
+    step3Field: '',
   });
 
-  // Estado para controlar la página actual del formulario
-  const [currentPage, setCurrentPage] = useState(1);
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
 
-  // Función para manejar los cambios en los inputs del formulario
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
+    setFormValues((prevValues) => ({
+      ...prevValues,
       [name]: value,
     }));
   };
 
-  // Función para manejar el envío del formulario
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aquí podrías enviar los datos del formulario a un servidor o hacer lo que necesites con ellos
-    console.log('Datos del formulario:', formData);
+  const handleReset = () => {
+    setActiveStep(0);
+    setFormValues({
+      step1Field: '',
+      step2Field: '',
+      step3Field: '',
+    });
   };
 
-  // Función para avanzar a la siguiente página del formulario
-  const goToNextPage = () => {
-    setCurrentPage((prevPage) => prevPage + 1);
+  const getStepContent = (step: number) => {
+    switch (step) {
+      case 0:
+        return (
+          <div>
+            <TextField
+              name="step1Field"
+              label="Step 1 Field"
+              value={formValues.step1Field}
+              onChange={handleChange}
+              fullWidth
+              margin="normal"
+            />
+          </div>
+        );
+      case 1:
+        return (
+          <div>
+            <TextField
+              name="step2Field"
+              label="Step 2 Field"
+              value={formValues.step2Field}
+              onChange={handleChange}
+              fullWidth
+              margin="normal"
+            />
+          </div>
+        );
+      case 2:
+        return (
+          <div>
+            <TextField
+              name="step3Field"
+              label="Step 3 Field"
+              value={formValues.step3Field}
+              onChange={handleChange}
+              fullWidth
+              margin="normal"
+            />
+          </div>
+        );
+      default:
+        return 'Unknown step';
+    }
   };
-
-  // Función para retroceder a la página anterior del formulario
-  const goToPreviousPage = () => {
-    setCurrentPage((prevPage) => prevPage - 1);
-  };
-
-  // Renderizado condicional de las páginas del formulario
-  let formPage;
-  switch (currentPage) {
-    case 1:
-      formPage = (
-        <div>
-          <h2>Página 1</h2>
-          <label htmlFor="nombre">Nombre:</label>
-          <input type="text" name="nombre" value={formData.nombre} onChange={handleInputChange} />
-          <br />
-          <button onClick={goToNextPage}>Siguiente</button>
-        </div>
-      );
-      break;
-    case 2:
-      formPage = (
-        <div>
-          <h2>Página 2</h2>
-          <label htmlFor="apellido">Apellido:</label>
-          <input type="text" name="apellido" value={formData.apellido} onChange={handleInputChange} />
-          <br />
-          <button onClick={goToPreviousPage}>Anterior</button>
-          <button onClick={goToNextPage}>Siguiente</button>
-        </div>
-      );
-      break;
-    case 3:
-      formPage = (
-        <div>
-          <h2>Página 3</h2>
-          <label htmlFor="email">Email:</label>
-          <input type="email" name="email" value={formData.email} onChange={handleInputChange} />
-          <br />
-          <button onClick={goToPreviousPage}>Anterior</button>
-          <button type="submit">Guardar</button>
-        </div>
-      );
-      break;
-    default:
-      formPage = null;
-  }
 
   return (
-    <form onSubmit={handleSubmit}>
-      {formPage}
-    </form>
+    <Box sx={{ width: '100%' }}>
+      <Stepper activeStep={activeStep} alternativeLabel>
+        {steps.map((label) => (
+          <Step key={label}>
+            <StepLabel>{label}</StepLabel>
+          </Step>
+        ))}
+      </Stepper>
+      <div>
+        {activeStep === steps.length ? (
+          <div>
+            <Typography variant="h6" gutterBottom>
+              All steps completed
+            </Typography>
+            <Button onClick={handleReset}>Reset</Button>
+          </div>
+        ) : (
+          <div>
+            {getStepContent(activeStep)}
+            <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+              <Button
+                color="inherit"
+                disabled={activeStep === 0}
+                onClick={handleBack}
+                sx={{ mr: 1 }}
+              >
+                Back
+              </Button>
+              <Box sx={{ flex: '1 1 auto' }} />
+              <Button onClick={handleNext}>
+                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+              </Button>
+            </Box>
+          </div>
+        )}
+      </div>
+    </Box>
   );
 };
 
-export default Formulario;
+export default FormStepper;
