@@ -12,6 +12,10 @@ const navigate = useNavigate();
   const handleFiltroClick = () => {
     navigate('/filtro'); // Navigate to register route on click
   };
+  
+  const handleNutrionClick = () => {
+    navigate('/nutricion'); // Navigate to register route on click
+  };
 
   return (
     <div>
@@ -21,7 +25,7 @@ const navigate = useNavigate();
             <div>Regresar</div>
         </button>
 
-        <button className='valor-nutricional'>
+        <button className='valor-nutricional' onClick={handleNutrionClick}>
             <div className='icon'><GiNetworkBars /></div>
             <div>Valor Nutricional</div>
         </button>
