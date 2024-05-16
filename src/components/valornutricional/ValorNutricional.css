@@ -9,31 +9,35 @@
 }
 
 .nutricion h1 {
-    background-color: blue;
+    background: linear-gradient(to right, rgba(0, 52, 210, 0.973), rgba(41, 162, 249, 0.5));
+    background-blend-mode: overlay;
     padding-left: 1rem;
     border-radius: 1rem;
 }
 
 .button-pdf {
     display: flex;
-    padding-left: 90%;
+    padding-left: 94.5%;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
 }
 
 .btn-pdf {
+    padding: 0 10px;
     font-size: 1rem;
     background:red;
     border: none;
     cursor: pointer;
     border: solid 2px;
     border-radius: 2rem;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
 }
 
 .btn-pdf:hover {
     font-size: 1rem;
     background:rgb(178, 19, 19) ;
     transform: scale(1.3);
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     border: none;
     cursor: pointer;
     border: solid 2px;
