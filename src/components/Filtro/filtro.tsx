@@ -10,6 +10,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 import "./filtro.css";
+import ControlledOpenSpeedDial from "../FloatingButton/FloatingButton";
 
 const Filtro: React.FC = () => {
   const [hours, setHours] = useState(0);
@@ -43,12 +44,7 @@ const Filtro: React.FC = () => {
 
   return (
     <div className="filtro-container">
-      <div className="go-back-button">
-        <Link to="/regiones" className="icon">
-          <FontAwesomeIcon icon={faArrowLeft} />
-          <span>Regresar</span>
-        </Link>
-      </div>
+      
       <form className="filtro-form">
         <div className="number-input">
           <label htmlFor="buscar">Nombre de la Receta:</label>
@@ -118,6 +114,7 @@ const Filtro: React.FC = () => {
       </ul>
       <button className="read-more-button" onClick={handlePreparacionClick}>Leer más</button>
     </div>
+    
     </div>
   );
 };
