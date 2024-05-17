@@ -1,7 +1,16 @@
-import React, { useState, ChangeEvent } from 'react';
-import { Stepper, Step, StepLabel, Button, Typography, TextField, Box } from '@mui/material';
+import React, { useState, ChangeEvent } from "react";
+import {
+  Stepper,
+  Step,
+  StepLabel,
+  Button,
+  Typography,
+  TextField,
+  Box,
+} from "@mui/material";
+import Grid from "@mui/material/Grid";
 
-const steps = ['Step 1', 'Step 2', 'Step 3'];
+const steps = ["", "", ""];
 
 interface FormValues {
   step1Field: string;
@@ -12,9 +21,9 @@ interface FormValues {
 const FormStepper: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [formValues, setFormValues] = useState<FormValues>({
-    step1Field: '',
-    step2Field: '',
-    step3Field: '',
+    step1Field: "",
+    step2Field: "",
+    step3Field: "",
   });
 
   const handleNext = () => {
@@ -36,9 +45,9 @@ const FormStepper: React.FC = () => {
   const handleReset = () => {
     setActiveStep(0);
     setFormValues({
-      step1Field: '',
-      step2Field: '',
-      step3Field: '',
+      step1Field: "",
+      step2Field: "",
+      step3Field: "",
     });
   };
 
@@ -46,16 +55,29 @@ const FormStepper: React.FC = () => {
     switch (step) {
       case 0:
         return (
-          <div>
-            <TextField
-              name="step1Field"
-              label="Step 1 Field"
-              value={formValues.step1Field}
-              onChange={handleChange}
-              fullWidth
-              margin="normal"
-            />
-          </div>
+          <Box sx={{ flexGrow: 1, p: 1 }}>
+            <Grid container spacing={2} sx={{ p: 1, pt: 2 }}>
+              <Grid item xs={12}>
+                <Grid container spacing={2}>
+                  <Grid item xs={3}>
+                    <TextField
+                      id="outlined-basic"
+                      label="Nombre de la receta *"
+                      variant="outlined"
+                    />
+                  </Grid>
+                  <Grid item xs={3}>
+                    <TextField
+                      disabled
+                      id="outlined-disabled"
+                      label="Fecha de creacion de la receta *"
+                      defaultValue="17/05/2024"
+                    />
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Box>
         );
       case 1:
         return (
@@ -84,12 +106,24 @@ const FormStepper: React.FC = () => {
           </div>
         );
       default:
-        return 'Unknown step';
+        return "Unknown step";
     }
   };
 
   return (
-    <Box sx={{ width: '100%', marginTop: 5 }}>
+    <Box sx={{ width: "100%" }}>
+      <Box
+        sx={{
+          m: 1,
+          mb: 3,
+          boxShadow: 3,
+          borderRadius: 2,
+          p: 1,
+          bgcolor: "#f4fab4",
+        }}
+      >
+        Información para la receta
+      </Box>
       <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map((label) => (
           <Step key={label}>
@@ -100,26 +134,34 @@ const FormStepper: React.FC = () => {
       <div>
         {activeStep === steps.length ? (
           <div>
-            
             <Button onClick={handleReset}>Guardar otra receta</Button>
           </div>
         ) : (
           <div>
             {getStepContent(activeStep)}
-            <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-              <Button
-                color="inherit"
-                disabled={activeStep === 0}
-                onClick={handleBack}
-                sx={{ mr: 1 }}
-              >
-                Back
-              </Button>
-              <Box sx={{ flex: '1 1 auto' }} />
-              <Button onClick={handleNext}>
-                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-              </Button>
-            </Box>
+            <Grid
+              container
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <Grid item>
+                <Button
+                  variant="contained"
+                  color="inherit"
+                  disabled={activeStep === 0}
+                  onClick={handleBack}
+                  sx={{ mr: 1 }}
+                >
+                  Back
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" onClick={handleNext}>
+                  {activeStep === steps.length - 1 ? "Finish" : "Next"}
+                </Button>
+              </Grid>
+            </Grid>
           </div>
         )}
       </div>

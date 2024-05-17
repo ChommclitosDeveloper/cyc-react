@@ -41,8 +41,8 @@ const AppContent: React.FC = () => {
         <Route path="/preparacion" element={<Preparacion/>} />
         <Route path="/nutricion" element={<ValorNutricional/>} />
         <Route path="/reseña historica" element={<Reseña/>} />
-        <Route path="/personalizadas" element={<Personalizadas/>} />
-        <Route path="/formulario" element={<Formulario/>} />
+        <Route path="/personalizadas/*" element={<Personalizadas/>} />
+        <Route path="formulario" element={<Formulario />} />
       </Routes>
       </div>
       {!hideNavBar && <FloatingButton />} {/* Añadir el botón flotante */}

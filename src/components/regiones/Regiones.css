@@ -1,6 +1,7 @@
 .regiones {
-  background: url(/public/RegisterAndLogin.jpg);
+  background-image: url(/public/Light\ theme.png);
   background-size: cover;
+  
 }
 
 .header {
