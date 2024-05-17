@@ -6,16 +6,19 @@ import LinesChart from './BarsChart';
 
 const ValorNutricional = () => {
 
+  const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
+  const handleClose = () => setOpen(false);
 
-  const handleFiltroClick = () => {
-    navigate('/preparacion'); // Navigate to register route on click
+  const handleGoBack = () => {
+    navigate(-1);
+    handleClose(); 
   };
 
   return (
     <div>
       <div className='botones-head'>
-        <button className='regresar' onClick={handleFiltroClick}>
+        <button className='regresar' onClick={handleGoBack}>
             <div className='icon'><TiArrowBack /></div>
             <div>Regresar</div>
         </button>

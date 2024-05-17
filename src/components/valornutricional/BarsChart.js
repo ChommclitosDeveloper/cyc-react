@@ -22,8 +22,8 @@ ChartJS.register(
     Filler
 );
 
-var beneficios = [500, 25, 50, 100]
-var valornutricional = ["Calorias", "Proteinas", "Carbohidratos", "Grasas"];
+var beneficios = [280, 4, 45, 9, 2]
+var valornutricional = ["Calorias", "Proteinas", "Carbohidratos", "Grasas", "Fibra"];
 
 var misoptions = {
     responsive : true,
@@ -31,11 +31,28 @@ var misoptions = {
     plugins : {
         legend : {
             display : false
+        },
+        tooltip: {
+            callbacks: {
+                label: function(context) {
+                    let label = context.dataset.label || '';
+                    if (label) {
+                        label += ': ';
+                    }
+                    label += context.parsed.y + ' g';
+                    return label;
+                }
+            }
         }
     },
     scales : {
         y : {
-            max : 600
+            max : 300,
+            ticks: {
+                callback: function(value) {
+                    return value + ' g';
+                }
+            }
         },
         x: {
             ticks: { color: 'rgba(34, 74, 197, 0.973)'}

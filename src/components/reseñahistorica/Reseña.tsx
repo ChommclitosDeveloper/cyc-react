@@ -44,9 +44,12 @@ const Reseña = () => {
             </div>
 
             <div className='resena'>
-                <h1>Titulo de la reseta</h1>
-                <p>Contenido sobre la receta</p>
-                <img src="/" alt="" />
+                <h1>Arroz con Coco</h1>
+                <p>El arroz con coco es un plato emblemático de la costa Caribe de Colombia, originado en la época colonial. La influencia africana es notable en este plato, ya que los esclavos africanos introdujeron el uso del coco en la cocina. Es común en celebraciones y comidas diarias por su sabor único y su versatilidad como acompañamiento.</p>
+                <div className='imagenes'>
+                  <img src="arroz-de-coco-ejemplo2.gif" alt="" />
+                  <img src="arroz-de-coco-ejemplo3.gif" alt="" />
+                </div>
             </div>
 
         </div>

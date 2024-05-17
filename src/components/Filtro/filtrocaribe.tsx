@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import "./filtro.css";
 import ControlledOpenSpeedDial from "../FloatingButton/FloatingButton";
 
-const Filtro: React.FC = () => {
+const Filtro = () => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
 

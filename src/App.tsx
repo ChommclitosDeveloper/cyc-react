@@ -7,7 +7,7 @@ import Homepage from './components/homepage/Homepage';
 import Regiones from './components/regiones/Regiones';
 import Personalizadas from './components/personalizadas/Personalizadas';
 import Register from './components/register/Register';
-import Preparacion from './components/preparacion/Preparacion';
+import Preparacion from './components/preparacion/Caribe/Preparacion';
 import Formulario from './components/Formulario/formulario';
 import FloatingButton from './components/FloatingButton/FloatingButton';
 import ValorNutricional from './components/valornutricional/ValorNutricional';
@@ -32,7 +32,7 @@ const AppContent: React.FC = () => {
         <Route path="/login" element={<Login />} />
         <Route path='/' element={<Homepage/>}/>
         <Route path="/regiones" element={<Regiones/>} />
-        <Route path="/filtro caribe" element={<Filtro />} />
+        <Route path="/filtro caribe" element={<Filtro/>} />
         <Route path="/filtro andina" element={<FiltroAndina/>}/>
         <Route path="/filtro orinoquia" element={<FiltroOrinoquia/>}/>
         <Route path="/filtro amazonica" element={<FiltroAmazonica/>}/>

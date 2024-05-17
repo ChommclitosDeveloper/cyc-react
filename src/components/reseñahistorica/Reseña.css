@@ -41,4 +41,19 @@
 
 .resena p {
     padding-bottom: 1rem;
+    width: 800px;
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.imagenes {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+    gap: 10px; /* Space between columns */
+    justify-content: center;
+}
+
+.imagenes img {
+    width: 100%; /* Ensure images are responsive */
+    border-radius: 2rem;
 }
