@@ -17,10 +17,21 @@ const FiltroOrinoquia = () => {
 
   // Array de imágenes de ejemplo
   const images = [
-    "prueba1.png",
-    "prueba2.png",
-    "prueba3.png",
-    // Agrega más imágenes según sea necesario
+    "../region_orinoquia/hormigas_asadas.jpg",
+    "../region_orinoquia/hormigas_asadas2.jpg",
+    "../region_orinoquia/hormigas_asadas3.jpg",
+  ];
+
+  const images2 = [
+    "../region_orinoquia/mondongo.jpeg",
+    "../region_orinoquia/mondongo2.jpeg",
+    "../region_orinoquia/mondongo3.png",
+  ];
+
+  const images3 = [
+    "../region_orinoquia/ternera_llanera.gif",
+    "../region_orinoquia/ternera_llanera2.jpg",
+    "../region_orinoquia/ternera_llanera3.jpg",
   ];
 
   // Configuración del carrusel
@@ -87,7 +98,7 @@ const FiltroOrinoquia = () => {
       </form>
 
       <div className="card">
-      <h5 className="card-title">Nombre de la Receta</h5>
+      <h5 className="card-title">Hormigas Culonas</h5>
       <Slider {...settings}>
         {images.map((image, index) => (
           <img key={index} src={image} alt={`Imagen ${index + 1}`} />
@@ -97,21 +108,20 @@ const FiltroOrinoquia = () => {
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
+
       </div>
       <ul className="details">
-        <li><strong>Región:</strong> Región de la receta</li>
-        <li><strong>Nivel de dificultad:</strong> Fácil</li>
+        <li><strong>Región:</strong> Orinoquia</li>
+        <li><strong>Nivel de dificultad:</strong> Medio</li>
         <li><strong>Duración Total:</strong> 60 minutos</li>
       </ul>
       <button className="read-more-button" onClick={handlePreparacionClick}>Leer más</button>
     </div>
 
     <div className="card">
-      <h5 className="card-title">Nombre de la Receta</h5>
+      <h5 className="card-title">Mondongo Llanero</h5>
       <Slider {...settings}>
-        {images.map((image, index) => (
+        {images2.map((image, index) => (
           <img key={index} src={image} alt={`Imagen ${index + 1}`} />
         ))}
       </Slider>
@@ -120,20 +130,19 @@ const FiltroOrinoquia = () => {
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
       </div>
       <ul className="details">
-        <li><strong>Región:</strong> Región de la receta</li>
-        <li><strong>Nivel de dificultad:</strong> Fácil</li>
-        <li><strong>Duración Total:</strong> 60 minutos</li>
+        <li><strong>Región:</strong> Orinoquia</li>
+        <li><strong>Nivel de dificultad:</strong> Medio</li>
+        <li><strong>Duración Total:</strong> 2 Horas y 30 Minutos</li>
       </ul>
       <button className="read-more-button" onClick={handlePreparacionClick}>Leer más</button>
     </div>
 
     <div className="card">
-      <h5 className="card-title">Nombre de la Receta</h5>
+      <h5 className="card-title">Ternera a la Llanera</h5>
       <Slider {...settings}>
-        {images.map((image, index) => (
+        {images3.map((image, index) => (
           <img key={index} src={image} alt={`Imagen ${index + 1}`} />
         ))}
       </Slider>
@@ -145,9 +154,9 @@ const FiltroOrinoquia = () => {
         <FontAwesomeIcon icon={faStar} />
       </div>
       <ul className="details">
-        <li><strong>Región:</strong> Región de la receta</li>
-        <li><strong>Nivel de dificultad:</strong> Fácil</li>
-        <li><strong>Duración Total:</strong> 60 minutos</li>
+        <li><strong>Región:</strong> Orinoquia</li>
+        <li><strong>Nivel de dificultad:</strong> Alto</li>
+        <li><strong>Duración Total:</strong> 3-4 Horas (asado lento)</li>
       </ul>
       <button className="read-more-button" onClick={handlePreparacionClick}>Leer más</button>
     </div>

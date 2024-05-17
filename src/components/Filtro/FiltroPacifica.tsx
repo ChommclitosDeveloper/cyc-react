@@ -16,10 +16,21 @@ const FiltroPacifica = () => {
   
     // Array de imágenes de ejemplo
     const images = [
-      "prueba1.png",
-      "prueba2.png",
-      "prueba3.png",
-      // Agrega más imágenes según sea necesario
+      "../region_pacifica/arroz_atollado.jfif",
+      "../region_pacifica/arroz_atollado2.jfif",
+      "../region_pacifica/arroz_atollado3.png",
+    ];
+
+    const images2 = [
+      "../region_pacifica/encocado_pescado.jfif",
+      "../region_pacifica/encocado_pescado2.jfif",
+      "../region_pacifica/encocado_pescado3.jfif",
+    ];
+
+    const images3 = [
+      "../region_pacifica/tamal_pingua.jpg",
+      "../region_pacifica/tamal_pingua2.jpg",
+      "../region_pacifica/tamal_pingua3.jpg",
     ];
   
     // Configuración del carrusel
@@ -86,9 +97,31 @@ const FiltroPacifica = () => {
             </form>
       
             <div className="card">
-            <h5 className="card-title">Nombre de la Receta</h5>
+            <h5 className="card-title">Arroz Atollado</h5>
             <Slider {...settings}>
               {images.map((image, index) => (
+                <img key={index} src={image} alt={`Imagen ${index + 1}`} />
+              ))}
+            </Slider>
+            <div className="rating">
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+              <FontAwesomeIcon icon={faStar} />
+
+            </div>
+            <ul className="details">
+              <li><strong>Región:</strong> Pacifica</li>
+              <li><strong>Nivel de dificultad:</strong> Medio</li>
+              <li><strong>Duración Total:</strong> 1 Hora y 30 Minutos</li>
+            </ul>
+            <button className="read-more-button" onClick={handlePreparacionClick}>Leer más</button>
+          </div>
+      
+          <div className="card">
+            <h5 className="card-title">Encocado de Pescado</h5>
+            <Slider {...settings}>
+              {images2.map((image, index) => (
                 <img key={index} src={image} alt={`Imagen ${index + 1}`} />
               ))}
             </Slider>
@@ -100,17 +133,17 @@ const FiltroPacifica = () => {
               <FontAwesomeIcon icon={faStar} />
             </div>
             <ul className="details">
-              <li><strong>Región:</strong> Región de la receta</li>
-              <li><strong>Nivel de dificultad:</strong> Fácil</li>
+              <li><strong>Región:</strong> Pacifica</li>
+              <li><strong>Nivel de dificultad:</strong> Medio</li>
               <li><strong>Duración Total:</strong> 60 minutos</li>
             </ul>
             <button className="read-more-button" onClick={handlePreparacionClick}>Leer más</button>
           </div>
       
           <div className="card">
-            <h5 className="card-title">Nombre de la Receta</h5>
+            <h5 className="card-title">Tamal de Pingua</h5>
             <Slider {...settings}>
-              {images.map((image, index) => (
+              {images3.map((image, index) => (
                 <img key={index} src={image} alt={`Imagen ${index + 1}`} />
               ))}
             </Slider>
@@ -119,34 +152,12 @@ const FiltroPacifica = () => {
               <FontAwesomeIcon icon={faStar} />
               <FontAwesomeIcon icon={faStar} />
               <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
+
             </div>
             <ul className="details">
-              <li><strong>Región:</strong> Región de la receta</li>
-              <li><strong>Nivel de dificultad:</strong> Fácil</li>
-              <li><strong>Duración Total:</strong> 60 minutos</li>
-            </ul>
-            <button className="read-more-button" onClick={handlePreparacionClick}>Leer más</button>
-          </div>
-      
-          <div className="card">
-            <h5 className="card-title">Nombre de la Receta</h5>
-            <Slider {...settings}>
-              {images.map((image, index) => (
-                <img key={index} src={image} alt={`Imagen ${index + 1}`} />
-              ))}
-            </Slider>
-            <div className="rating">
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-            </div>
-            <ul className="details">
-              <li><strong>Región:</strong> Región de la receta</li>
-              <li><strong>Nivel de dificultad:</strong> Fácil</li>
-              <li><strong>Duración Total:</strong> 60 minutos</li>
+              <li><strong>Región:</strong> Pacifica</li>
+              <li><strong>Nivel de dificultad:</strong> Alto</li>
+              <li><strong>Duración Total:</strong> 2 Horas</li>
             </ul>
             <button className="read-more-button" onClick={handlePreparacionClick}>Leer más</button>
           </div>

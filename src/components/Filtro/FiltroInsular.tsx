@@ -17,10 +17,21 @@ const FiltroInsular = () => {
 
   // Array de imágenes de ejemplo
   const images = [
-    "prueba1.png",
-    "prueba2.png",
-    "prueba3.png",
-    // Agrega más imágenes según sea necesario
+    "../region_insular/cangrejo_al_curry.jfif",
+    "../region_insular/cangrejo_al_curry2.JPG",
+    "../region_insular/cangrejo_al_curry3.JPG",
+  ];
+
+  const images2 = [
+    "../region_insular/pan_coco.jfif",
+    "../region_insular/pan_coco2.jfif",
+    "../region_insular/pan_coco3.jfif",
+  ];
+
+  const images3 = [
+    "../region_insular/rondon.jpg",
+    "../region_insular/rondon2.jpg",
+    "../region_insular/rondon3.jpg",
   ];
 
   // Configuración del carrusel
@@ -87,7 +98,7 @@ const FiltroInsular = () => {
           </form>
     
           <div className="card">
-          <h5 className="card-title">Nombre de la Receta</h5>
+          <h5 className="card-title">Cangrejo al Curry</h5>
           <Slider {...settings}>
             {images.map((image, index) => (
               <img key={index} src={image} alt={`Imagen ${index + 1}`} />
@@ -98,20 +109,20 @@ const FiltroInsular = () => {
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
-            <FontAwesomeIcon icon={faStar} />
+
           </div>
           <ul className="details">
-            <li><strong>Región:</strong> Región de la receta</li>
-            <li><strong>Nivel de dificultad:</strong> Fácil</li>
-            <li><strong>Duración Total:</strong> 60 minutos</li>
+            <li><strong>Región:</strong> Insular</li>
+            <li><strong>Nivel de dificultad:</strong> Medio</li>
+            <li><strong>Duración Total:</strong> 30 minutos</li>
           </ul>
           <button className="read-more-button" onClick={handlePreparacionClick}>Leer más</button>
         </div>
     
         <div className="card">
-          <h5 className="card-title">Nombre de la Receta</h5>
+          <h5 className="card-title">Pan de Coco</h5>
           <Slider {...settings}>
-            {images.map((image, index) => (
+            {images2.map((image, index) => (
               <img key={index} src={image} alt={`Imagen ${index + 1}`} />
             ))}
           </Slider>
@@ -120,20 +131,19 @@ const FiltroInsular = () => {
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
-            <FontAwesomeIcon icon={faStar} />
           </div>
           <ul className="details">
-            <li><strong>Región:</strong> Región de la receta</li>
-            <li><strong>Nivel de dificultad:</strong> Fácil</li>
-            <li><strong>Duración Total:</strong> 60 minutos</li>
+            <li><strong>Región:</strong> Insular</li>
+            <li><strong>Nivel de dificultad:</strong> Bajo</li>
+            <li><strong>Duración Total:</strong> 2 Horas (incluyendo tiempo de fermentación)</li>
           </ul>
           <button className="read-more-button" onClick={handlePreparacionClick}>Leer más</button>
         </div>
     
         <div className="card">
-          <h5 className="card-title">Nombre de la Receta</h5>
+          <h5 className="card-title">Rondon</h5>
           <Slider {...settings}>
-            {images.map((image, index) => (
+            {images3.map((image, index) => (
               <img key={index} src={image} alt={`Imagen ${index + 1}`} />
             ))}
           </Slider>
@@ -145,9 +155,9 @@ const FiltroInsular = () => {
             <FontAwesomeIcon icon={faStar} />
           </div>
           <ul className="details">
-            <li><strong>Región:</strong> Región de la receta</li>
-            <li><strong>Nivel de dificultad:</strong> Fácil</li>
-            <li><strong>Duración Total:</strong> 60 minutos</li>
+            <li><strong>Región:</strong> Insular</li>
+            <li><strong>Nivel de dificultad:</strong> Alto</li>
+            <li><strong>Duración Total:</strong> 2 Horas</li>
           </ul>
           <button className="read-more-button" onClick={handlePreparacionClick}>Leer más</button>
         </div>
