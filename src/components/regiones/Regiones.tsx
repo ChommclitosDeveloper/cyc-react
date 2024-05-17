@@ -58,7 +58,27 @@ const Regiones = () => {
   const navigate = useNavigate(); // Hook for navigation
 
   const handleFiltroClick = () => {
-    navigate('/filtro'); // Navigate to register route on click
+    navigate('/filtro caribe'); // Navigate to register route on click
+  };
+
+  const handleFiltroInsularClick = () => {
+    navigate('/filtro insular'); // Navigate to register route on click
+  };
+
+  const handleFiltroPacificaClick = () => {
+    navigate('/filtro pacifica'); // Navigate to register route on click
+  };
+
+  const handleFiltroAndinaClick = () => {
+    navigate('/filtro andina'); // Navigate to register route on click
+  };
+
+  const handleFiltroOrinoquiaClick = () => {
+    navigate('/filtro orinoquia'); // Navigate to register route on click
+  };
+
+  const handleFiltroAmazonicaClick = () => {
+    navigate('/filtro amazonica'); // Navigate to register route on click
   };
 
   return (
@@ -83,7 +103,7 @@ const Regiones = () => {
         </div>
         </button>
 
-        <button className='region-item-1'>
+        <button className='region-item-1' onClick={handleFiltroInsularClick}>
         <div className="">
           <h2>Region Insular</h2>
           <p>La región Insular de Colombia, representada principalmente por San Andrés, Providencia y Santa Catalina, ofrece una gastronomía única que combina influencias africanas e isleñas, con platos como el rondón y el pescado a la criolla.</p>
@@ -95,7 +115,7 @@ const Regiones = () => {
         </div>
         </button>
 
-        <button className='region-item-1'>
+        <button className='region-item-1' onClick={handleFiltroPacificaClick}>
         <div className="">
           <h2>Region Pacifica</h2>
           <p>La región Pacífica de Colombia se caracteriza por su exquisita gastronomía afrocolombiana, incluyendo platos como el arroz con coco, el sancocho de pescado, y la deliciosa cazuela de mariscos.</p>
@@ -107,7 +127,7 @@ const Regiones = () => {
         </div>
         </button>
 
-        <button className='region-item-1'>
+        <button className='region-item-1' onClick={handleFiltroAndinaClick}>
         <div className="">
           <h2>Region Andina</h2>
           <p>La región Andina de Colombia ofrece una variedad de platos tradicionales como el ajiaco santafereño, la bandeja paisa, y las arepas rellenas, que reflejan la diversidad culinaria de la zona montañosa del país.</p>
@@ -119,7 +139,7 @@ const Regiones = () => {
         </div>
         </button>
 
-        <button className='region-item-1'>
+        <button className='region-item-1' onClick={handleFiltroOrinoquiaClick}>
         <div className="">
           <h2>Region Orinoquía</h2>
           <p>La región Orinoquía ofrece una rica variedad de platos tradicionales como el mute llanero, el casabe de yuca, y la carne a la llanera, que representan la cultura y la cocina de las extensas llanuras de Colombia.</p>
@@ -131,7 +151,7 @@ const Regiones = () => {
         </div>
         </button>
 
-        <button className='region-item-1'>
+        <button className='region-item-1' onClick={handleFiltroAmazonicaClick}>
         <div className="">
           <h2>Region Amazónica</h2>
           <p>La región Amazónica de Colombia ofrece una gran diversidad de platos tradicionales como el tacacho con cecina, el juane de arroz, y el pescado al mojo de ajo, que reflejan la riqueza natural y cultural de la selva colombiana.</p>
