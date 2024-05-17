@@ -1,7 +1,7 @@
 /* NavBar.css */
 
 .navbar {
-  background-color: #b0f2c2;
+  background-color: #b2dafa;
   
   display: flex;
   justify-content: space-between;
@@ -37,7 +37,7 @@
   left: -250px;
   width: 250px;
   height: 100%;
-  background-color: #b0f2c2;
+  background-color: #b2dafa;
   transition: left 0.3s ease;
   z-index: 999;
 }
