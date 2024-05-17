@@ -89,7 +89,7 @@ const FormStepper: React.FC = () => {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%', marginTop: 5 }}>
       <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map((label) => (
           <Step key={label}>
@@ -100,10 +100,8 @@ const FormStepper: React.FC = () => {
       <div>
         {activeStep === steps.length ? (
           <div>
-            <Typography variant="h6" gutterBottom>
-              All steps completed
-            </Typography>
-            <Button onClick={handleReset}>Reset</Button>
+            
+            <Button onClick={handleReset}>Guardar otra receta</Button>
           </div>
         ) : (
           <div>

@@ -7,44 +7,54 @@ import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
 import SaveIcon from '@mui/icons-material/Save';
 import PrintIcon from '@mui/icons-material/Print';
 import ShareIcon from '@mui/icons-material/Share';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack'; // Importa el ícono de regresar
-import { useNavigate } from 'react-router-dom';// Importa useHistory para manejar el historial de navegación
-import { Hidden } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import HomeIcon from '@mui/icons-material/Home'; // Importa el ícono de Home
+import { useNavigate } from 'react-router-dom';
 
 const actions = [
-  { icon: <ArrowBackIcon />, name: 'Back' } // Agrega la acción de regresar
+  { icon: <ArrowBackIcon />, name: 'Back' },
+  { icon: <HomeIcon />, name: 'Home' } // Agrega la acción de Home
 ];
 
-export default function ControlledOpenSpeedDial() {
+const ControlledOpenSpeedDial: React.FC = () => {
   const [open, setOpen] = React.useState(false);
-  const navigate = useNavigate(); // Obtiene el objeto de historial de navegación
+  const navigate = useNavigate();
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   const handleBack = () => {
-    navigate(-1); // Usa la función goBack del objeto de historial de navegación para regresar a la página anterior
-    handleClose(); // Cierra el SpeedDial después de hacer clic en "Regresar"
+    navigate(-1);
+    handleClose();
+  };
+
+  const handleHome = () => {
+    navigate('/');
+    handleClose();
   };
 
   return (
-    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1, position:'fixed', bottom:-150, right:16, zIndex:1000, overflowY:'hidden' }}>
+    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1, position: 'fixed', bottom: -100, right: 16, zIndex: 1000, }}>
       <SpeedDial
         ariaLabel="SpeedDial controlled open example"
-        sx={{   }}
         icon={<SpeedDialIcon />}
         onClose={handleClose}
         onOpen={handleOpen}
         open={open}
+        sx={{}}
       >
         {actions.map((action) => (
           <SpeedDialAction
             key={action.name}
             icon={action.icon}
             tooltipTitle={action.name}
-            onClick={action.name === 'Back' ? handleBack : handleClose} // Utiliza la nueva función de manejo de clics para "Regresar"
+            onClick={action.name === 'Back' ? handleBack : handleHome} // Maneja la navegación según la acción
           />
         ))}
       </SpeedDial>
     </Box>
   );
-}
+};
+
+export default ControlledOpenSpeedDial;
+

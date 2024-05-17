@@ -31,7 +31,7 @@ const NavBar: React.FC<NavBarProps> = ({ onSidebarToggle }) => {
           <FontAwesomeIcon icon={showSidebar ? faTimes : faBars} />
         </div>
         <div className="navbar-logo">
-          <Link to="/">Logo</Link>
+          <Link to="/">RecetasCol</Link>
         </div>
       </div>
       <div className={`sidebar ${showSidebar ? "show" : ""}`}>

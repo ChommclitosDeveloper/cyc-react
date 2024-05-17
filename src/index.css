@@ -18,7 +18,7 @@ code {
    /* Evita el desbordamiento horizontal */
   
   overflow-x: hidden; /* Evita el desbordamiento horizontal */
-  position: relative; /* Necesario para que los elementos posicionales funcionen correctamente */
+   /* Necesario para que los elementos posicionales funcionen correctamente */
 }
 
 .padres {
