@@ -55,7 +55,7 @@ const Personalizadas = () => {
                 size="large"
                 color="success"
                 endIcon={<AddIcon />}
-                href="formulario"
+                href="/personalizadas/formulario"
               >
                 Crear receta
               </Button>
