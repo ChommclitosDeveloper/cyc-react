@@ -87,6 +87,7 @@ const FormStepper: React.FC = () => {
                 <Grid container spacing={2}>
                   <Grid item xs={3}>
                     <TextField
+                      sx={{ bgcolor: "white" }}
                       fullWidth
                       id="outlined-basic"
                       label="Nombre de la receta *"
@@ -95,6 +96,7 @@ const FormStepper: React.FC = () => {
                   </Grid>
                   <Grid item xs={3}>
                     <TextField
+                      sx={{ bgcolor: "white" }}
                       fullWidth
                       disabled
                       id="outlined-disabled"
@@ -103,7 +105,7 @@ const FormStepper: React.FC = () => {
                     />
                   </Grid>
                   <Grid item xs={3}>
-                    <FormControl fullWidth>
+                    <FormControl fullWidth sx={{ bgcolor: "white" }}>
                       <InputLabel id="demo-simple-select-label">
                         Region a la que pertenece *
                       </InputLabel>
@@ -121,7 +123,7 @@ const FormStepper: React.FC = () => {
                     </FormControl>
                   </Grid>
                   <Grid item xs={3}>
-                    <FormControl fullWidth>
+                    <FormControl fullWidth sx={{ bgcolor: "white" }}>
                       <InputLabel id="demo-simple-select-label">
                         Nivel de dificultad *
                       </InputLabel>
@@ -156,7 +158,7 @@ const FormStepper: React.FC = () => {
                             borderColor: "lightgrey",
                             borderRadius: 2,
                             p: 1,
-                            bgcolor: "inherit",
+                            bgcolor: "white",
                           }}
                         >
                           <Grid container spacing={2}>
@@ -176,17 +178,15 @@ const FormStepper: React.FC = () => {
                           handleTagChange={handleTagChange}
                         />
                         <FormHelperText>
-                          Etiquetas o palabras clave 
+                          Etiquetas o palabras clave
                         </FormHelperText>
                       </Grid>
                       <Grid item xs={4}>
                         <NumberInputBasic />
-                        <FormHelperText>
-                          Comensales
-                        </FormHelperText>
+                        <FormHelperText>Comensales</FormHelperText>
                       </Grid>
                       <Grid item xs={8}>
-                        <InputFileUpload/>
+                        <InputFileUpload />
                         <FormHelperText>
                           Cargar imagen para la portada
                         </FormHelperText>
