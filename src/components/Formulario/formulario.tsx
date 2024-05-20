@@ -15,8 +15,11 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import MaxHeightTextarea from "./TextArea";
-import NumberInputBasic from "./TextNumber";
-import NumberInputAdornments from "./TextNumber";
+import { MultiValue } from "react-select";
+import NumberInputAdornments from "./TextNumberTwo";
+import TagSelector from "./Etiquetas";
+import NumberInputBasic from "./TextNumberOne";
+import InputFileUpload from "./BotonArchivos";
 
 const steps = ["Informacion Basica", "Ingredientes", "Procedimientos"];
 
@@ -26,7 +29,17 @@ interface FormValues {
   step3Field: string;
 }
 
+type TagOption = {
+  value: string;
+  label: string;
+};
+
 const FormStepper: React.FC = () => {
+  const [selectedTags, setSelectedTags] = useState<MultiValue<TagOption>>([]);
+
+  const handleTagChange = (selectedOptions: MultiValue<TagOption>) => {
+    setSelectedTags(selectedOptions);
+  };
   const [age, setAge] = React.useState("");
   const [activeStep, setActiveStep] = useState(0);
   const [formValues, setFormValues] = useState<FormValues>({
@@ -156,6 +169,27 @@ const FormStepper: React.FC = () => {
                           </Grid>
                         </Box>
                         <FormHelperText>Duracion de la receta *</FormHelperText>
+                      </Grid>
+                      <Grid item xs={8}>
+                        <TagSelector
+                          selectedTags={selectedTags}
+                          handleTagChange={handleTagChange}
+                        />
+                        <FormHelperText>
+                          Etiquetas o palabras clave 
+                        </FormHelperText>
+                      </Grid>
+                      <Grid item xs={4}>
+                        <NumberInputBasic />
+                        <FormHelperText>
+                          Comensales
+                        </FormHelperText>
+                      </Grid>
+                      <Grid item xs={8}>
+                        <InputFileUpload/>
+                        <FormHelperText>
+                          Cargar imagen para la portada
+                        </FormHelperText>
                       </Grid>
                     </Grid>
                   </Grid>

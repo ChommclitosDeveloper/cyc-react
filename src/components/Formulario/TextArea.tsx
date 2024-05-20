@@ -37,7 +37,7 @@ const ResponsiveTextarea: React.FC = () => {
     <StyledTextarea
       
       aria-label="maximum height"
-      placeholder="Descripcion de la receta"
+      placeholder="Descripcion de la receta *"
     />
   );
 };
