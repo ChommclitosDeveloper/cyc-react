@@ -60,6 +60,8 @@
     padding: 40px;
     border-radius: 2rem;
     border: solid 2px;
+    background: transparent;
+    backdrop-filter: blur(20px);
 }
 
 .botones-tabla {
@@ -200,13 +202,13 @@ input[type="checkbox"]:checked + label {
 .procedimiento h2 {
     font-size: 1.5rem;
     margin-top: 2rem;
-    align-self: flex-start; /* Anula la alineación vertical */
+    align-self: flex-start; 
     padding-bottom: 2rem;
 }
 
 .procedimiento p {
     padding-bottom: 1rem;
-    align-self: flex-start; /* Anula la alineación vertical */
+    align-self: flex-start; 
     padding-left: 2rem;
 }
 
