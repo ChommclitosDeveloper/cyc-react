@@ -4,13 +4,18 @@ import {
   Step,
   StepLabel,
   Button,
-  Typography,
   TextField,
   Box,
+  Select,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  SelectChangeEvent,
 } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import MaxHeightTextarea from "./TextArea";
 
-const steps = ["", "", ""];
+const steps = ["Informacion Basica", "Ingredientes", "Procedimientos"];
 
 interface FormValues {
   step1Field: string;
@@ -19,6 +24,7 @@ interface FormValues {
 }
 
 const FormStepper: React.FC = () => {
+  const [age, setAge] = React.useState("");
   const [activeStep, setActiveStep] = useState(0);
   const [formValues, setFormValues] = useState<FormValues>({
     step1Field: "",
@@ -32,6 +38,10 @@ const FormStepper: React.FC = () => {
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleChange2 = (event: SelectChangeEvent) => {
+    setAge(event.target.value as string);
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -61,6 +71,7 @@ const FormStepper: React.FC = () => {
                 <Grid container spacing={2}>
                   <Grid item xs={3}>
                     <TextField
+                      fullWidth
                       id="outlined-basic"
                       label="Nombre de la receta *"
                       variant="outlined"
@@ -68,11 +79,55 @@ const FormStepper: React.FC = () => {
                   </Grid>
                   <Grid item xs={3}>
                     <TextField
+                      fullWidth
                       disabled
                       id="outlined-disabled"
                       label="Fecha de creacion de la receta *"
                       defaultValue="17/05/2024"
                     />
+                  </Grid>
+                  <Grid item xs={3}>
+                    <FormControl fullWidth>
+                      <InputLabel id="demo-simple-select-label">
+                        Region a la que pertenece *
+                      </InputLabel>
+                      <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={age}
+                        label="Region a la que pertenece *"
+                        onChange={handleChange2}
+                      >
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <FormControl fullWidth>
+                      <InputLabel id="demo-simple-select-label">
+                        Nivel de dificultad *
+                      </InputLabel>
+                      <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={age}
+                        label="Nivel de dificultad *"
+                        onChange={handleChange2}
+                      >
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item xs={12}>
+                <Grid container spacing={2}>
+                  <Grid item xs={4}>
+                    <MaxHeightTextarea/>
                   </Grid>
                 </Grid>
               </Grid>
