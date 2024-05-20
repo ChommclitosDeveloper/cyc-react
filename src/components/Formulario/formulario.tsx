@@ -7,6 +7,7 @@ import {
   TextField,
   Box,
   Select,
+  FormHelperText,
   FormControl,
   InputLabel,
   MenuItem,
@@ -14,6 +15,8 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import MaxHeightTextarea from "./TextArea";
+import NumberInputBasic from "./TextNumber";
+import NumberInputAdornments from "./TextNumber";
 
 const steps = ["Informacion Basica", "Ingredientes", "Procedimientos"];
 
@@ -127,7 +130,34 @@ const FormStepper: React.FC = () => {
               <Grid item xs={12}>
                 <Grid container spacing={2}>
                   <Grid item xs={4}>
-                    <MaxHeightTextarea/>
+                    <MaxHeightTextarea />
+                  </Grid>
+                  <Grid item xs={8}>
+                    <Grid container spacing={2}>
+                      <Grid item xs={4}>
+                        <Box
+                          sx={{
+                            width: "100%",
+                            display: "flex",
+                            border: 1,
+                            borderColor: "lightgrey",
+                            borderRadius: 2,
+                            p: 1,
+                            bgcolor: "inherit",
+                          }}
+                        >
+                          <Grid container spacing={2}>
+                            <Grid item xs={6}>
+                              <NumberInputAdornments adornmentText="h" />
+                            </Grid>
+                            <Grid item xs={6}>
+                              <NumberInputAdornments adornmentText="m" />
+                            </Grid>
+                          </Grid>
+                        </Box>
+                        <FormHelperText>Duracion de la receta *</FormHelperText>
+                      </Grid>
+                    </Grid>
                   </Grid>
                 </Grid>
               </Grid>

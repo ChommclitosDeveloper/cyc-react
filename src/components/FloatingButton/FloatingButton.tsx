@@ -30,7 +30,7 @@ const ControlledOpenSpeedDial: React.FC = () => {
   };
 
   return (
-    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1, position: 'fixed', bottom: -100, right: 16, zIndex: 1000, }}>
+    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1, position: 'fixed', bottom: -80, right: 16, zIndex: 1000, }}>
       <SpeedDial
         ariaLabel="SpeedDial controlled open example"
         icon={<SpeedDialIcon />}
