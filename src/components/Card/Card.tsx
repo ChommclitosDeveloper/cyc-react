@@ -47,7 +47,7 @@ const ActionAreaCard: React.FC<ActionAreaCardProps> = ({
     setTimeout(() => {
       setRippleStyle(null);
       navigate(navigateTo);
-    }, 500); // Tiempo para el efecto de onda
+    }, 400); // Tiempo para el efecto de onda
   };
 
   return (
@@ -65,10 +65,10 @@ const ActionAreaCard: React.FC<ActionAreaCardProps> = ({
         "&:hover": {
           transform: "scale(1.05)",
           boxShadow: "0 6px 20px rgba(0, 0, 0, 0.15)",
-           // color gris al pasar el mouse
+          backgroundColor: "rgba(0, 0, 0, 0.04)", // color gris al pasar el mouse
         },
         "&:active": {
-          transform: "scale(0.98)",
+          transform: "scale(1)",
           boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
           transition: "transform 0.1s, box-shadow 0.1s",
           backgroundColor: "rgba(0, 0, 0, 0.04)", // animación más rápida al hacer clic
