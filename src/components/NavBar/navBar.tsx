@@ -1,45 +1,46 @@
-import React from 'react';
-import { styled, useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import CssBaseline from '@mui/material/CssBaseline';
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import React from "react";
+import { styled, useTheme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import CssBaseline from "@mui/material/CssBaseline";
+import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import List from "@mui/material/List";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const drawerWidth = 240;
 
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
+const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
   open?: boolean;
   isMdUp?: boolean;
 }>(({ theme, open, isMdUp }) => ({
-  flexGrow: 1,
-  padding: theme.spacing(3),
-  transition: theme.transitions.create('margin', {
+  
+  padding: theme.spacing(2),
+  transition: theme.transitions.create("margin", {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  marginLeft: isMdUp ? `-${drawerWidth}px` : 0,
-  ...(open && isMdUp && {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
+  marginLeft: isMdUp ? 0 : 0,
+  ...(open &&
+    isMdUp && {
+      transition: theme.transitions.create("margin", {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+      marginLeft: `${drawerWidth}px`,
     }),
-    marginLeft: 0,
-  }),
 }));
 
 interface AppBarProps extends MuiAppBarProps {
@@ -61,24 +62,27 @@ const AppBar = styled(MuiAppBar, {
       duration: theme.transitions.duration.enteringScreen,
     }),
   }),
+  
 }));
 
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
+const DrawerHeader = styled("div")(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
   padding: theme.spacing(0, 1),
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
-  justifyContent: 'flex-end',
+  justifyContent: "flex-end",
 }));
 
 interface PersistentDrawerLeftProps {
   children: React.ReactNode;
 }
 
-export default function PersistentDrawerLeft({ children }: PersistentDrawerLeftProps) {
+export default function PersistentDrawerLeft({
+  children,
+}: PersistentDrawerLeftProps) {
   const theme = useTheme();
-  const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
+  const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -90,21 +94,39 @@ export default function PersistentDrawerLeft({ children }: PersistentDrawerLeftP
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{  p:1 }}>
       <CssBaseline />
-      <AppBar position="fixed" open={isMdUp && open}>
+
+      <AppBar
+        position="static"
+        open={isMdUp && open}
+        sx={{
+          bgcolor: "#b2dafa",
+          borderRadius: 4,
+          
+        }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            sx={{ mr: 2, ...(open && isMdUp && { display: 'none' }) }}
+            sx={{
+              mr: 2,
+              ...(open && isMdUp && { display: "none" }),
+              color: "black",
+            }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Persistent drawer
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ color: "black" }}
+          >
+            RecetasCol
           </Typography>
         </Toolbar>
       </AppBar>
@@ -112,24 +134,29 @@ export default function PersistentDrawerLeft({ children }: PersistentDrawerLeftP
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          '& .MuiDrawer-paper': {
+          "& .MuiDrawer-paper": {
             width: drawerWidth,
-            boxSizing: 'border-box',
+            boxSizing: "border-box",
           },
+          p: 1,
         }}
-        variant={isMdUp ? 'persistent' : 'temporary'}
+        variant={isMdUp ? "persistent" : "temporary"}
         anchor="left"
         open={open}
         onClose={!isMdUp ? handleDrawerClose : undefined}
       >
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            {theme.direction === "ltr" ? (
+              <ChevronLeftIcon />
+            ) : (
+              <ChevronRightIcon />
+            )}
           </IconButton>
         </DrawerHeader>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
@@ -142,7 +169,7 @@ export default function PersistentDrawerLeft({ children }: PersistentDrawerLeftP
         </List>
         <Divider />
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+          {["All mail", "Trash", "Spam"].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
@@ -155,12 +182,9 @@ export default function PersistentDrawerLeft({ children }: PersistentDrawerLeftP
         </List>
       </Drawer>
       <Main open={open} isMdUp={isMdUp}>
-        <DrawerHeader />
+        
         {children}
       </Main>
     </Box>
   );
 }
-
-
-

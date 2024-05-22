@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // importar los 
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { Box, keyframes } from "@mui/material";
+import { Box, keyframes, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 interface ActionAreaCardProps {
@@ -27,7 +27,8 @@ const ActionAreaCard: React.FC<ActionAreaCardProps> = ({
   navigateTo,
 }) => {
   const navigate = useNavigate();
-  const [rippleStyle, setRippleStyle] = React.useState<React.CSSProperties | null>(null);
+  const [rippleStyle, setRippleStyle] =
+    React.useState<React.CSSProperties | null>(null);
 
   const handleClick = (event: React.MouseEvent) => {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -40,8 +41,6 @@ const ActionAreaCard: React.FC<ActionAreaCardProps> = ({
       height: size,
       top: y,
       left: x,
-      
-
     });
 
     setTimeout(() => {
@@ -84,12 +83,23 @@ const ActionAreaCard: React.FC<ActionAreaCardProps> = ({
         ))}
       </Carousel>
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {text1}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {text2}
-        </Typography>
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Grid item xs={12}>
+            <Typography gutterBottom variant="h5" component="div">
+              {text1}
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="body2" color="text.secondary">
+              {text2}
+            </Typography>
+          </Grid>
+        </Grid>
       </CardContent>
       {rippleStyle && (
         <Box

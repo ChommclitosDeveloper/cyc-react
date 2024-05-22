@@ -33,14 +33,7 @@ const Homepage = () => {
 
   const navigate = useNavigate(); // Hook for navigation
 
-  const handleRegionesClick = () => {
-    navigate("/regiones"); // Navigate to register route on click
-  };
-
-  const handlePersonalizadasClick = () => {
-    navigate("/personalizadas");
-  };
-
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
@@ -58,7 +51,7 @@ const Homepage = () => {
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography color={"black"} variant="h5" gutterBottom>
+              <Typography color={"gray"} fontWeight={"bold"} variant="h6" gutterBottom>
                 Tu espacio favorito de recetas
               </Typography>
             </Grid>
@@ -80,7 +73,7 @@ const Homepage = () => {
                 images={images2}
                 text1="Recetas personalizadas"
                 text2="¡Puedes crear tus propias recetas aqui!"
-                navigateTo="personalizadas"
+                navigateTo="/personalizadas"
               />
             </Grid>
           </Grid>

@@ -18,14 +18,20 @@ import FiltroInsular from './components/Filtro/FiltroInsular';
 import FiltroPacifica from './components/Filtro/FiltroPacifica';
 import FiltroAmazonica from './components/Filtro/FiltroAmazonica';
 import PersistentDrawerLeft from './components/NavBar/navBar';
+import { Box } from '@mui/material';
+import ActionAreaCard from './components/Filtro/FiltroPrubea';
 
 const AppContent: React.FC = () => {
   const location = useLocation();
   const hideNavBar = location.pathname === '/login' || location.pathname === '/register';
   const hideDrawer = location.pathname === '/login' || location.pathname === '/register';
-
+  const images = [
+    "../region_caribe/arroz_con_coco.JPG",
+    "../region_caribe/arroz_con_coco2.JPG",
+    "../region_caribe/arroz_con_coco3.JPG",
+  ];
   return (
-    <>
+    <Box sx={{ }}>
       
       {hideDrawer ? (
         <Routes>
@@ -33,15 +39,15 @@ const AppContent: React.FC = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Homepage />} />
           <Route path="/regiones" element={<Regiones />} />
-          <Route path="/filtro caribe" element={<Filtro />} />
-          <Route path="/filtro andina" element={<FiltroAndina />} />
-          <Route path="/filtro orinoquia" element={<FiltroOrinoquia />} />
-          <Route path="/filtro amazonica" element={<FiltroAmazonica />} />
-          <Route path="/filtro insular" element={<FiltroInsular />} />
-          <Route path="/filtro pacifica" element={<FiltroPacifica />} />
+          <Route path="/regiones/filtrocaribe" element={<Filtro />} />
+          <Route path="/regiones/filtroandina" element={<FiltroAndina />} />
+          <Route path="/regiones/filtroorinoquia" element={<FiltroOrinoquia />} />
+          <Route path="/regiones/filtroamazonica" element={<FiltroAmazonica />} />
+          <Route path="/regiones/filtroinsular" element={<FiltroInsular />} />
+          <Route path="/regiones/filtropacifica" element={<FiltroPacifica />} />
           <Route path="/preparacion" element={<Preparacion />} />
           <Route path="/nutricion" element={<ValorNutricional />} />
-          <Route path="/reseña historica" element={<Reseña />} />
+          <Route path="/reseñahistorica" element={<Reseña />} />
           <Route path="/personalizadas/*" element={<Personalizadas />} />
           <Route path="formulario" element={<Formulario />} />
         </Routes>
@@ -52,12 +58,12 @@ const AppContent: React.FC = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Homepage />} />
             <Route path="/regiones" element={<Regiones />} />
-            <Route path="/filtro caribe" element={<Filtro />} />
-            <Route path="/filtro andina" element={<FiltroAndina />} />
-            <Route path="/filtro orinoquia" element={<FiltroOrinoquia />} />
-            <Route path="/filtro amazonica" element={<FiltroAmazonica />} />
-            <Route path="/filtro insular" element={<FiltroInsular />} />
-            <Route path="/filtro pacifica" element={<FiltroPacifica />} />
+            <Route path="/regiones/filtrocaribe" element={<Filtro />} />
+            <Route path="/regiones/filtroandina" element={<FiltroAndina />} />
+            <Route path="/regiones/filtroorinoquia" element={<FiltroOrinoquia />} />
+            <Route path="/regiones/filtroamazonica" element={<FiltroAmazonica />} />
+            <Route path="/regiones/filtroinsular" element={<FiltroInsular />} />
+            <Route path="/regiones/filtropacifica" element={<FiltroPacifica />} />
             <Route path="/preparacion" element={<Preparacion />} />
             <Route path="/nutricion" element={<ValorNutricional />} />
             <Route path="/reseña historica" element={<Reseña />} />
@@ -67,7 +73,7 @@ const AppContent: React.FC = () => {
         </PersistentDrawerLeft>
       )}
       {!hideNavBar && <FloatingButton />} {/* Añadir el botón flotante */}
-    </>
+    </Box>
   );
 };
 

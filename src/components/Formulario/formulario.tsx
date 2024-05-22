@@ -81,7 +81,7 @@ const FormStepper: React.FC = () => {
     switch (step) {
       case 0:
         return (
-          <Box sx={{ flexGrow: 1, p: 1 }}>
+          <Box sx={{ flexGrow: 1, }}>
             <Grid container spacing={2} sx={{ p: 1, pt: 2 }}>
               <Grid item xs={12}>
                 <Grid container spacing={2}>
@@ -238,7 +238,7 @@ const FormStepper: React.FC = () => {
           boxShadow: 3,
           borderRadius: 2,
           p: 1,
-          bgcolor: "#f4fab4",
+          bgcolor: "#fffec2",
         }}
       >
         Información para la receta

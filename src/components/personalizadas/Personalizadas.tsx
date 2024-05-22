@@ -3,12 +3,7 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
 import Formulario from "../Formulario/formulario";
 
@@ -23,7 +18,7 @@ const Personalizadas = () => {
               boxShadow: 3,
               borderRadius: 2,
               p: 1,
-              bgcolor: "#f4fab4",
+              bgcolor: "#fffec2",
             }}
           >
             Recetas Personalizadas
@@ -42,7 +37,14 @@ const Personalizadas = () => {
               <Button
                 variant="contained"
                 size="large"
-                color="info"
+                sx={{
+                  color:'gray',
+                  backgroundColor: "#87CEFA", // Cambia este valor al color que desees
+                  "&:hover": {
+                    color:'white',
+                    backgroundColor: "#84b6f4", // Cambia este valor al color que desees para el hover
+                  },
+                }}
                 endIcon={<RemoveRedEyeIcon />}
               >
                 Ver mis recetas
@@ -52,7 +54,14 @@ const Personalizadas = () => {
               <Button
                 variant="contained"
                 size="large"
-                color="success"
+                sx={{
+                  color:'gray',
+                  backgroundColor: "#98FB98", // Cambia este valor al color que desees
+                  "&:hover": {
+                    color:'white',
+                    backgroundColor: "#77dd77", // Cambia este valor al color que desees para el hover
+                  },
+                }}
                 endIcon={<AddIcon />}
                 href="/personalizadas/formulario"
               >

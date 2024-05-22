@@ -10,7 +10,7 @@ const Preparacion = () => {
     const navigate = useNavigate();
 
   const handleFiltroCaribeClick = () => {
-    navigate('/filtro caribe');
+    navigate('/filtrocaribe');
   };
   
   const handleNutrionClick = () => {
@@ -18,7 +18,7 @@ const Preparacion = () => {
   };
 
   const handleReseñaClick = () => {
-    navigate('/reseña historica'); // Navigate to register route on click
+    navigate('/reseñahistorica'); // Navigate to register route on click
   };
 
   return (
