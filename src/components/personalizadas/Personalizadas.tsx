@@ -7,8 +7,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useLocation,
-  Link,
+  
 } from "react-router-dom";
 import React from "react";
 import Formulario from "../Formulario/formulario";

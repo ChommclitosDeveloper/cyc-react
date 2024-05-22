@@ -3,7 +3,8 @@ import "./Homepage.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Grid } from "@mui/material";
+import { Grid, Box, Typography } from "@mui/material";
+import ActionAreaCard from "../Card/Card";
 
 const Homepage = () => {
   const images = [
@@ -41,59 +42,51 @@ const Homepage = () => {
   };
 
   return (
-    <div className="homepage">
-      <Grid container spacing={2} justifyContent="center" alignItems="center">
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
         <Grid item xs={12}>
-          <header className="header">
-            <h1 className="title">Bienvenidos a RecetasCol</h1>
-            <p className="subtitle">Tu espacio favorito de recetas</p>
-          </header>
-        </Grid>
-        <Grid item xs={6}>
           <Grid
             container
             spacing={2}
-            direction="row-reverse"
+            direction="column"
             justifyContent="center"
             alignItems="center"
           >
             <Grid item xs={12}>
-              <button className="grid-item-1" onClick={handleRegionesClick}>
-                <div className="">
-                  <h2>¡Entra y conoce las recetas que tenemos para ti!</h2>
-                  <p>
-                    Puedes seleccionar una region de colombia para consultar las
-                    principales recetas que hay
-                  </p>
-                  <Slider {...settings}>
-                    {images2.map((image, index) => (
-                      <img
-                        key={index}
-                        src={image}
-                        alt={`Imagen ${index + 1}`}
-                      />
-                    ))}
-                  </Slider>
-                </div>
-              </button>
+              <Typography fontWeight={"bold"} variant="h4" gutterBottom>
+                Bienvenidos a RecetasCol
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography color={"black"} variant="h5" gutterBottom>
+                Tu espacio favorito de recetas
+              </Typography>
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={6}>
-          <button className="grid-item-2" onClick={handlePersonalizadasClick}>
-            <div className="">
-              <h2>Recetas personalizadas</h2>
-              <p>¡Puedes crear tus propias recetas aqui!</p>
-              <Slider {...settings}>
-                {images.map((image, index) => (
-                  <img key={index} src={image} alt={`Imagen ${index + 1}`} />
-                ))}
-              </Slider>
-            </div>
-          </button>
+
+        <Grid item xs={12}>
+          <Grid container spacing={2} sx={{pl:{xs:'none', md:25,}, pr:{xs:'none', md:25,}}}>
+            <Grid item xs={12} md={6}>
+              <ActionAreaCard
+                images={images}
+                text1="¡Entra y conoce las recetas que tenemos para ti!"
+                text2="Puedes seleccionar una region de colombia para consultar las principales recetas que hay"
+                navigateTo="/regiones"
+              />
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <ActionAreaCard
+                images={images2}
+                text1="Recetas personalizadas"
+                text2="¡Puedes crear tus propias recetas aqui!"
+                navigateTo="personalizadas"
+              />
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
-    </div>
+    </Box>
   );
 };
 

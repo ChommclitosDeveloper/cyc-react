@@ -18,20 +18,22 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const drawerWidth = 240;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
-}>(({ theme, open }) => ({
+  isMdUp?: boolean;
+}>(({ theme, open, isMdUp }) => ({
   flexGrow: 1,
   padding: theme.spacing(3),
   transition: theme.transitions.create('margin', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  marginLeft: `-${drawerWidth}px`,
-  ...(open && {
+  marginLeft: isMdUp ? `-${drawerWidth}px` : 0,
+  ...(open && isMdUp && {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
@@ -76,6 +78,7 @@ interface PersistentDrawerLeftProps {
 
 export default function PersistentDrawerLeft({ children }: PersistentDrawerLeftProps) {
   const theme = useTheme();
+  const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -89,14 +92,14 @@ export default function PersistentDrawerLeft({ children }: PersistentDrawerLeftP
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={isMdUp && open}>
         <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
+            sx={{ mr: 2, ...(open && isMdUp && { display: 'none' }) }}
           >
             <MenuIcon />
           </IconButton>
@@ -114,9 +117,10 @@ export default function PersistentDrawerLeft({ children }: PersistentDrawerLeftP
             boxSizing: 'border-box',
           },
         }}
-        variant="persistent"
+        variant={isMdUp ? 'persistent' : 'temporary'}
         anchor="left"
         open={open}
+        onClose={!isMdUp ? handleDrawerClose : undefined}
       >
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
@@ -150,12 +154,13 @@ export default function PersistentDrawerLeft({ children }: PersistentDrawerLeftP
           ))}
         </List>
       </Drawer>
-      <Main open={open}>
+      <Main open={open} isMdUp={isMdUp}>
         <DrawerHeader />
         {children}
       </Main>
     </Box>
   );
 }
+
 
 
