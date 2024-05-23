@@ -33,11 +33,12 @@ const ControlledOpenSpeedDial: React.FC = () => {
     <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1, position: 'fixed', bottom: -80, right: 16, zIndex: 1000, }}>
       <SpeedDial
         ariaLabel="SpeedDial controlled open example"
-        icon={<SpeedDialIcon sx={{color:'gray'}} />}
+        icon={<SpeedDialIcon sx={{color:'black'}} />}
         onClose={handleClose}
         onOpen={handleOpen}
         open={open}
         sx={{
+
           '& .MuiFab-primary': {
             backgroundColor: '#b2dafa', // Cambia este valor al color que desees
             '&:hover': {

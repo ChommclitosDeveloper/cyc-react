@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Box, Grid, Typography } from "@mui/material";
-import ActionAreaCard from "../Card/Card";
+import ActionAreaCard from "../Card/CardGeneral";
 
 const Regiones = () => {
   const images = [

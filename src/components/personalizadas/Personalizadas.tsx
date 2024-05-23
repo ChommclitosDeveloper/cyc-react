@@ -28,20 +28,21 @@ const Personalizadas = () => {
           <Grid
             container
             direction="row"
-            justifyContent="flex-center"
+            justifyContent="flex-start"
             alignItems="center"
             spacing={6}
             sx={{ pl: 1 }}
           >
-            <Grid item>
+            <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
               <Button
                 variant="contained"
                 size="large"
                 sx={{
-                  color:'gray',
+                  borderRadius: 3,
+                  color: "black",
                   backgroundColor: "#87CEFA", // Cambia este valor al color que desees
                   "&:hover": {
-                    color:'white',
+                    color: "white",
                     backgroundColor: "#84b6f4", // Cambia este valor al color que desees para el hover
                   },
                 }}
@@ -50,15 +51,16 @@ const Personalizadas = () => {
                 Ver mis recetas
               </Button>
             </Grid>
-            <Grid item>
+            <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
               <Button
                 variant="contained"
                 size="large"
                 sx={{
-                  color:'gray',
+                  borderRadius: 3,
+                  color: "black",
                   backgroundColor: "#98FB98", // Cambia este valor al color que desees
                   "&:hover": {
-                    color:'white',
+                    color: "white",
                     backgroundColor: "#77dd77", // Cambia este valor al color que desees para el hover
                   },
                 }}

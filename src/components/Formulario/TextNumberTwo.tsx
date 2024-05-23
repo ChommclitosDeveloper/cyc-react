@@ -43,6 +43,7 @@ export default function NumberInputAdornments({
     <Box
       sx={{
         display: "flex",
+        
       }}
     >
       <NumberInput
