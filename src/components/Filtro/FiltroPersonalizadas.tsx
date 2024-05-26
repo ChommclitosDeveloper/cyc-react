@@ -19,7 +19,7 @@ import {
 import NumberInputAdornments from "../Formulario/TextNumberTwo";
 import {MediaCard} from "../Card/CardFiltro";
 
-const Filtro = () => {
+const FiltroPersonalizadas = () => {
   const [rating, setRating] = React.useState("");
   const [dificultad, setDificultad] = React.useState("");
   const [hours, setHours] = useState(0);
@@ -79,7 +79,27 @@ const Filtro = () => {
               justifyContent="flex-start"
               alignItems="center"
             >
-              <Grid item xs={12} sm={6} md={4} lg={2.5} xl={2}>
+              <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
+                <FormControl fullWidth sx={{ bgcolor: "white" }}>
+                  <InputLabel id="demo-simple-select-label">
+                    Region
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={rating}
+                    label="Region"
+                    onChange={Valoración}
+                  >
+                    <MenuItem value={1}>1</MenuItem>
+                    <MenuItem value={2}>2</MenuItem>
+                    <MenuItem value={3}>3</MenuItem>
+                    <MenuItem value={4}>4</MenuItem>
+                    <MenuItem value={5}>5</MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
                 <TextField
                   sx={{ bgcolor: "white" }}
                   fullWidth
@@ -111,7 +131,7 @@ const Filtro = () => {
                 </Box>
                 <FormHelperText>Duración de la receta</FormHelperText>
               </Grid>
-              <Grid item xs={12} sm={6} md={4} lg={2.5} xl={2}>
+              <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
                 <FormControl fullWidth sx={{ bgcolor: "white" }}>
                   <InputLabel id="demo-simple-select-label">
                     Valoración
@@ -131,7 +151,7 @@ const Filtro = () => {
                   </Select>
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={6} md={4} lg={2.5} xl={2}>
+              <Grid item xs={12} sm={6} md={4} lg={2} xl={2}>
                 <FormControl fullWidth sx={{ bgcolor: "white" }}>
                   <InputLabel id="demo-simple-select-label">
                     Nivel de dificultad
@@ -188,4 +208,4 @@ const Filtro = () => {
   );
 };
 
-export default Filtro;
+export default FiltroPersonalizadas;

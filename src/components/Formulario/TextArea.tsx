@@ -32,12 +32,16 @@ const StyledTextarea = styled(TextareaAutosize)(({ theme }) => ({
   },
 }));
 
-const ResponsiveTextarea: React.FC = () => {
+interface TextAreaProps {
+  descripcionArea: string;
+}
+
+const ResponsiveTextarea: React.FC<TextAreaProps> = ({descripcionArea}) => {
   return (
     <StyledTextarea
       
       aria-label="maximum height"
-      placeholder="Descripcion de la receta *"
+      placeholder={descripcionArea}
     />
   );
 };

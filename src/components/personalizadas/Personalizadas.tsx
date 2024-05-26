@@ -3,9 +3,10 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import React from "react";
 import Formulario from "../Formulario/formulario";
+import FiltroPersonalizadas from "../Filtro/FiltroPersonalizadas";
 
 const Personalizadas = () => {
   return (
@@ -47,6 +48,7 @@ const Personalizadas = () => {
                   },
                 }}
                 endIcon={<RemoveRedEyeIcon />}
+                href="/personalizadas/filtropersonalizadas"
               >
                 Ver mis recetas
               </Button>
@@ -76,12 +78,16 @@ const Personalizadas = () => {
           <Box
             sx={{
               m: 1,
-              boxShadow: 3,
+              boxShadow: 1,
               borderRadius: 2,
               p: 1,
             }}
           >
             <Routes>
+              <Route
+                path="filtropersonalizadas"
+                element={<FiltroPersonalizadas />}
+              />
               <Route path="formulario" element={<Formulario />} />
             </Routes>
           </Box>

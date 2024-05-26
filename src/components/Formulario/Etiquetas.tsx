@@ -28,14 +28,27 @@ const customStyles: StylesConfig<TagOption, true> = {
     ...base,
     width: '100%',
   }),
+  control: (base) => ({
+    ...base,
+    borderRadius: 3,
+  }),
   menu: (base) => ({
     ...base,
     zIndex: 9999,
+    borderRadius: 3,
   }),
   multiValue: (base) => ({
     ...base,
-    backgroundColor: 'lightskyblue',
-    borderRadius: 10 // Color de fondo de las etiquetas seleccionadas
+    backgroundColor: '#b0f2c2',
+    borderRadius: 10, // Color de fondo de las etiquetas seleccionadas
+  }),
+  dropdownIndicator: (base) => ({
+    ...base,
+    borderRadius: 3,
+  }),
+  valueContainer: (base) => ({
+    ...base,
+    borderRadius: 3,
   }),
 };
 
@@ -55,4 +68,5 @@ const TagSelector: React.FC<TagSelectorProps> = ({ selectedTags, handleTagChange
 };
 
 export default TagSelector;
+
 

@@ -1,6 +1,4 @@
-import { useNavigate } from "react-router-dom";
 import "./Homepage.css";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Grid, Box, Typography } from "@mui/material";
@@ -20,20 +18,6 @@ const Homepage = () => {
     "/visitar_regiones/regiones3.webp",
   ];
 
-  // Configuración del carrusel
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 2000,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-
-  const navigate = useNavigate(); // Hook for navigation
-
-  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
@@ -73,7 +57,7 @@ const Homepage = () => {
                 images={images2}
                 text1="Recetas personalizadas"
                 text2="¡Puedes crear tus propias recetas aqui!"
-                navigateTo="/personalizadas"
+                navigateTo="/personalizadas/filtropersonalizadas"
               />
             </Grid>
           </Grid>

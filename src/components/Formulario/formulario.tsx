@@ -12,6 +12,11 @@ import {
   InputLabel,
   MenuItem,
   SelectChangeEvent,
+  FormControlLabel,
+  Checkbox,
+  Accordion,
+  AccordionSummary,
+  Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import MaxHeightTextarea from "./TextArea";
@@ -20,8 +25,11 @@ import NumberInputAdornments from "./TextNumberTwo";
 import TagSelector from "./Etiquetas";
 import NumberInputBasic from "./TextNumberOne";
 import InputFileUpload from "./BotonArchivos";
+import { AddBox, AddCircleOutlined, Save } from "@mui/icons-material";
+import BasicTable from "./Table";
+import AccordionUsage from "./Accordion";
 
-const steps = ["Informacion Basica", "Ingredientes", "Procedimientos"];
+const steps = ["Información Basica", "Ingredientes", "Procedimientos"];
 
 interface FormValues {
   step1Field: string;
@@ -77,17 +85,33 @@ const FormStepper: React.FC = () => {
     });
   };
 
+  const [procedures, setProcedures] = useState<number[]>([]);
+
+  const handleAddProcedure = () => {
+    setProcedures((prevProcedures) => [...prevProcedures, prevProcedures.length]);
+  };
+
+  const handleRemoveProcedure = (index: number) => {
+    setProcedures((prevProcedures) => prevProcedures.filter((_, i) => i !== index));
+  };
+
   const getStepContent = (step: number) => {
     switch (step) {
       case 0:
         return (
-          <Box sx={{ flexGrow: 1, }}>
+          <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2} sx={{ p: 1, pt: 2 }}>
               <Grid item xs={12}>
                 <Grid container spacing={2}>
                   <Grid item xs={3}>
                     <TextField
-                      sx={{ bgcolor: "white" }}
+                      sx={{
+                        borderRadius: 3,
+                        bgcolor: "white",
+                        "& .MuiOutlinedInput-root": {
+                          borderRadius: 3,
+                        },
+                      }}
                       fullWidth
                       id="outlined-basic"
                       label="Nombre de la receta *"
@@ -96,7 +120,13 @@ const FormStepper: React.FC = () => {
                   </Grid>
                   <Grid item xs={3}>
                     <TextField
-                      sx={{ bgcolor: "white" }}
+                      sx={{
+                        borderRadius: 3,
+                        bgcolor: "white",
+                        "& .MuiOutlinedInput-root": {
+                          borderRadius: 3,
+                        },
+                      }}
                       fullWidth
                       disabled
                       id="outlined-disabled"
@@ -105,7 +135,7 @@ const FormStepper: React.FC = () => {
                     />
                   </Grid>
                   <Grid item xs={3}>
-                    <FormControl fullWidth sx={{ bgcolor: "white" }}>
+                    <FormControl fullWidth>
                       <InputLabel id="demo-simple-select-label">
                         Region a la que pertenece *
                       </InputLabel>
@@ -115,6 +145,7 @@ const FormStepper: React.FC = () => {
                         value={age}
                         label="Region a la que pertenece *"
                         onChange={handleChange2}
+                        sx={{ borderRadius: 3, bgcolor: "white" }}
                       >
                         <MenuItem value={10}>Ten</MenuItem>
                         <MenuItem value={20}>Twenty</MenuItem>
@@ -123,7 +154,7 @@ const FormStepper: React.FC = () => {
                     </FormControl>
                   </Grid>
                   <Grid item xs={3}>
-                    <FormControl fullWidth sx={{ bgcolor: "white" }}>
+                    <FormControl fullWidth>
                       <InputLabel id="demo-simple-select-label">
                         Nivel de dificultad *
                       </InputLabel>
@@ -133,6 +164,7 @@ const FormStepper: React.FC = () => {
                         value={age}
                         label="Nivel de dificultad *"
                         onChange={handleChange2}
+                        sx={{ borderRadius: 3, bgcolor: "white" }}
                       >
                         <MenuItem value={10}>Ten</MenuItem>
                         <MenuItem value={20}>Twenty</MenuItem>
@@ -145,7 +177,7 @@ const FormStepper: React.FC = () => {
               <Grid item xs={12}>
                 <Grid container spacing={2}>
                   <Grid item xs={4}>
-                    <MaxHeightTextarea />
+                    <MaxHeightTextarea descripcionArea="Descripcion de la receta *"/>
                   </Grid>
                   <Grid item xs={8}>
                     <Grid container spacing={2}>
@@ -200,29 +232,119 @@ const FormStepper: React.FC = () => {
         );
       case 1:
         return (
-          <div>
-            <TextField
-              name="step2Field"
-              label="Step 2 Field"
-              value={formValues.step2Field}
-              onChange={handleChange}
-              fullWidth
-              margin="normal"
-            />
-          </div>
+          <Box sx={{ flexGrow: 1 }}>
+            <Grid container spacing={2} sx={{ p: 1, pt: 2 }}>
+              <Grid item xs={12}>
+                <Grid container spacing={2}>
+                  <Grid item xs={3}>
+                    <TextField
+                      sx={{
+                        borderRadius: 3,
+                        bgcolor: "white",
+                        "& .MuiOutlinedInput-root": {
+                          borderRadius: 3,
+                        },
+                      }}
+                      fullWidth
+                      id="Nombre Ingrediente"
+                      label="Nombre del ingrediente *"
+                      variant="outlined"
+                    />
+                  </Grid>
+                  <Grid item xs={3}>
+                    <NumberInputBasic />
+                    <FormHelperText>Cantidad</FormHelperText>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label="¿Incluir unidad de medida?"
+                    />
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item xs={12}>
+                <Grid container spacing={2}>
+                  <Grid item xs={3}>
+                    <NumberInputBasic />
+                    <FormHelperText>
+                      Cantidad(en unidad de medida) *
+                    </FormHelperText>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <FormControl fullWidth>
+                      <InputLabel id="demo-simple-select-label">
+                        Unidad de medida *
+                      </InputLabel>
+                      <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={age}
+                        label="Nivel de dificultad *"
+                        onChange={handleChange2}
+                        sx={{ borderRadius: 3, bgcolor: "white" }}
+                      >
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Button
+                      sx={{
+                        borderRadius: 3,
+                        color: "black",
+                        backgroundColor: "#ffca99", // Cambia este valor al color que desees
+                        "&:hover": {
+                          color: "white",
+                          backgroundColor: "#FFA07A", // Cambia este valor al color que desees para el hover
+                        },
+                      }}
+                      startIcon={<AddCircleOutlined />}
+                    >
+                      Agregar
+                    </Button>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item xs={12}>
+                <BasicTable />
+              </Grid>
+            </Grid>
+          </Box>
         );
       case 2:
         return (
-          <div>
-            <TextField
-              name="step3Field"
-              label="Step 3 Field"
-              value={formValues.step3Field}
-              onChange={handleChange}
-              fullWidth
-              margin="normal"
-            />
-          </div>
+          <Box sx={{ flexGrow: 1 }}>
+            <Grid container spacing={2} sx={{ p: 1, pt: 2 }}>
+              <Grid item xs={12}>
+                <Button
+                  sx={{
+                    borderRadius: 3,
+                    color: "black",
+                    backgroundColor: "#ffca99", // Cambia este valor al color que desees
+                    "&:hover": {
+                      color: "white",
+                      backgroundColor: "#FFA07A", // Cambia este valor al color que desees para el hover
+                    },
+                  }}
+                  endIcon={<AddBox />}
+                  onClick={handleAddProcedure}
+                >
+                  Añadir procedimiento
+                </Button>
+              </Grid>
+              {procedures.map((procedure, index) => (
+                <Grid item xs={12} key={index}>
+                  <AccordionUsage
+                    index={index}
+                    handleRemove={handleRemoveProcedure}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         );
       default:
         return "Unknown step";
@@ -253,7 +375,20 @@ const FormStepper: React.FC = () => {
       <div>
         {activeStep === steps.length ? (
           <div>
-            <Button onClick={handleReset}>Guardar otra receta</Button>
+            <Button
+              sx={{
+                borderRadius: 3,
+                color: "black",
+                backgroundColor: "#87CEFA", // Cambia este valor al color que desees
+                "&:hover": {
+                  color: "white",
+                  backgroundColor: "#84b6f4", // Cambia este valor al color que desees para el hover
+                },
+              }}
+              onClick={handleReset}
+            >
+              Guardar otra receta
+            </Button>
           </div>
         ) : (
           <div>
@@ -265,19 +400,45 @@ const FormStepper: React.FC = () => {
               alignItems="center"
             >
               <Grid item>
-                <Button
-                  variant="contained"
-                  color="inherit"
-                  disabled={activeStep === 0}
-                  onClick={handleBack}
-                  sx={{ mr: 1 }}
-                >
-                  Back
-                </Button>
+                {activeStep > 0 && (
+                  <Grid item>
+                    <Button
+                      variant="contained"
+                      color="inherit"
+                      onClick={handleBack}
+                      sx={{
+                        borderRadius: 3,
+                        color: "black",
+                        backgroundColor: "#CFCFC4", // Cambia este valor al color que desees
+                        "&:hover": {
+                          color: "white",
+                          backgroundColor: "gray", // Cambia este valor al color que desees para el hover
+                        },
+                      }}
+                    >
+                      Regresar
+                    </Button>
+                  </Grid>
+                )}
               </Grid>
               <Grid item>
-                <Button variant="contained" onClick={handleNext}>
-                  {activeStep === steps.length - 1 ? "Finish" : "Next"}
+                <Button
+                  sx={{
+                    borderRadius: 3,
+                    color: "black",
+                    backgroundColor:
+                      activeStep === steps.length - 1 ? "#98FB98" : "#87CEFA", // Cambia este valor al color que desees
+                    "&:hover": {
+                      color: "white",
+                      backgroundColor:
+                        activeStep === steps.length - 1 ? "#77dd77" : "#84b6f4", // Cambia este valor al color que desees para el hover
+                    },
+                  }}
+                  startIcon={activeStep === steps.length - 1 ? <Save /> : null}
+                  variant="contained"
+                  onClick={handleNext}
+                >
+                  {activeStep === steps.length - 1 ? "Guardar" : "Continuar"}
                 </Button>
               </Grid>
             </Grid>

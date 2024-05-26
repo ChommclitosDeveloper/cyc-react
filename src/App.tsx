@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import NavBar from './components/NavBar/navBar';
 import Filtro from './components/Filtro/filtrocaribe';
 import Login from './components/login/Login';
 import Homepage from './components/homepage/Homepage';
@@ -19,17 +18,13 @@ import FiltroPacifica from './components/Filtro/FiltroPacifica';
 import FiltroAmazonica from './components/Filtro/FiltroAmazonica';
 import PersistentDrawerLeft from './components/NavBar/navBar';
 import { Box } from '@mui/material';
-import ActionAreaCard from './components/Filtro/FiltroPrubea';
+import FiltroPersonalizadas from './components/Filtro/FiltroPersonalizadas';
 
 const AppContent: React.FC = () => {
   const location = useLocation();
   const hideNavBar = location.pathname === '/login' || location.pathname === '/register';
   const hideDrawer = location.pathname === '/login' || location.pathname === '/register';
-  const images = [
-    "../region_caribe/arroz_con_coco.JPG",
-    "../region_caribe/arroz_con_coco2.JPG",
-    "../region_caribe/arroz_con_coco3.JPG",
-  ];
+  
   return (
     <Box sx={{ }}>
       
@@ -69,6 +64,7 @@ const AppContent: React.FC = () => {
             <Route path="/reseña historica" element={<Reseña />} />
             <Route path="/personalizadas/*" element={<Personalizadas />} />
             <Route path="formulario" element={<Formulario />} />
+            <Route path="filtropersonalizadas" element={<FiltroPersonalizadas />} />
           </Routes>
         </PersistentDrawerLeft>
       )}
