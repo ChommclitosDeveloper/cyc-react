@@ -43,8 +43,8 @@ const Homepage = () => {
         </Grid>
 
         <Grid item xs={12}>
-          <Grid container spacing={2} sx={{pl:{xs:'none', md:25,}, pr:{xs:'none', md:25,}}}>
-            <Grid item xs={12} md={6}>
+          <Grid container spacing={2} sx={{pl:{xs:'none', sm:'none', md:'none', lg:20,}, pr:{xs:'none', sm:'none', md:'none', lg:20,}}}>
+            <Grid item xs={12} sm={6} md={6}>
               <ActionAreaCard
                 images={images}
                 text1="¡Entra y conoce las recetas que tenemos para ti!"
@@ -52,7 +52,7 @@ const Homepage = () => {
                 navigateTo="/regiones"
               />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} sm={6} md={6}>
               <ActionAreaCard
                 images={images2}
                 text1="Recetas personalizadas"

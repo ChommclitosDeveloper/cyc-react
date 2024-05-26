@@ -12,12 +12,15 @@ interface ActionAreaCardProps {
   images: string[];
   text1: string;
   text2: string;
+  text3: string;
+  text4: string;
+
   //navigateTo: string;
 }
 
-export const MediaCard: React.FC<ActionAreaCardProps> = ({ images, text1, text2 }) => {
+export const MediaCard: React.FC<ActionAreaCardProps> = ({ images, text1, text2, text3, text4 }) => {
   return (
-    <Card sx={{ width: "100%", borderRadius: 5 }}>
+    <Card sx={{ width: "100%", borderRadius: 5, minHeight:'550px' }}>
       <Carousel showThumbs={false} autoPlay interval={3000} infiniteLoop>
         {images.map((src, index) => (
           <div key={index}>
@@ -34,10 +37,10 @@ export const MediaCard: React.FC<ActionAreaCardProps> = ({ images, text1, text2 
           <strong>Region: </strong>{text2}
         </Typography>
         <Typography gutterBottom variant="subtitle1">
-          <strong>Nivel de dificultad: </strong>Baja
+          <strong>Nivel de dificultad: </strong>{text3}
         </Typography>
         <Typography gutterBottom variant="subtitle1">
-          <strong>Duracion Total: </strong>1 hora y 35 minutos
+          <strong>Duracion Total: </strong>{text4}
         </Typography>
         <Grid
           container

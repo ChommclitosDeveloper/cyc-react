@@ -4,12 +4,14 @@ import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import HomeIcon from '@mui/icons-material/Home'; // Importa el ícono de Home
+import HomeIcon from '@mui/icons-material/Home';
+import BookIcon from '@mui/icons-material/Book'; // Importa un icono para la nueva acción
 import { useNavigate } from 'react-router-dom';
 
 const actions = [
-  { icon: <ArrowBackIcon />, name: 'Back' },
-  { icon: <HomeIcon />, name: 'Home' } // Agrega la acción de Home
+  { icon: <ArrowBackIcon />, name: 'Regresar' },
+  { icon: <HomeIcon />, name: 'Inicio' },
+  { icon: <BookIcon />, name: 'Personalizadas' } // Agrega la nueva acción
 ];
 
 const ControlledOpenSpeedDial: React.FC = () => {
@@ -29,32 +31,42 @@ const ControlledOpenSpeedDial: React.FC = () => {
     handleClose();
   };
 
+  const handlePersonalizadas = () => {
+    navigate('/personalizadas/filtropersonalizadas'); // Cambia esta ruta a la que necesites
+    handleClose();
+  };
+
   return (
-    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1, position: 'fixed', bottom: -80, right: 16, zIndex: 1000, }}>
+    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1, position: 'fixed', bottom: -25, right: 16, zIndex: 1000 }}>
       <SpeedDial
         ariaLabel="SpeedDial controlled open example"
-        icon={<SpeedDialIcon sx={{color:'black'}} />}
+        icon={<SpeedDialIcon sx={{ color: 'black' }} />}
         onClose={handleClose}
         onOpen={handleOpen}
         open={open}
         sx={{
-
           '& .MuiFab-primary': {
-            backgroundColor: '#b2dafa', // Cambia este valor al color que desees
+            backgroundColor: '#b2dafa',
             '&:hover': {
-              backgroundColor: '#84abca', // Cambia este valor al color que desees para el hover
+              backgroundColor: '#84abca',
             },
           },
         }}
-        
       >
         {actions.map((action) => (
           <SpeedDialAction
             key={action.name}
             icon={action.icon}
             tooltipTitle={action.name}
-            onClick={action.name === 'Back' ? handleBack : handleHome}
-            // Maneja la navegación según la acción
+            onClick={() => {
+              if (action.name === 'Regresar') {
+                handleBack();
+              } else if (action.name === 'Inicio') {
+                handleHome();
+              } else if (action.name === 'Personalizadas') {
+                handlePersonalizadas();
+              }
+            }}
           />
         ))}
       </SpeedDial>
@@ -63,4 +75,5 @@ const ControlledOpenSpeedDial: React.FC = () => {
 };
 
 export default ControlledOpenSpeedDial;
+
 

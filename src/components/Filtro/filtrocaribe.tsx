@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +16,7 @@ import {
   TextField,
 } from "@mui/material";
 import NumberInputAdornments from "../Formulario/TextNumberTwo";
-import {MediaCard} from "../Card/CardFiltro";
+import { MediaCard } from "../Card/CardFiltro";
 
 const Filtro = () => {
   const [rating, setRating] = React.useState("");
@@ -57,8 +56,6 @@ const Filtro = () => {
     "../region_caribe/arepa_de_huevo2.jpg",
     "../region_caribe/arepa_de_huevo3.jpg",
   ];
-
- 
 
   return (
     <Box sx={{ flexGrow: 1, width: "100%" }}>
@@ -173,13 +170,31 @@ const Filtro = () => {
         <Grid item xs={12}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6} md={6} lg={4}>
-              <MediaCard images={images} text1="Arroz con Coco" text2="Caribe"/>
+              <MediaCard
+                images={images}
+                text1="Arroz con Coco"
+                text2="Caribe"
+                text3="Medio"
+                text4="30 Minutos"
+              />
             </Grid>
             <Grid item xs={12} sm={6} md={6} lg={4}>
-              <MediaCard images={images2} text1="Mote de Queso" text2="Caribe"/>
+              <MediaCard
+                images={images2}
+                text1="Mote de Queso"
+                text2="Caribe"
+                text3="Medio"
+                text4="50 Minutos"
+              />
             </Grid>
             <Grid item xs={12} sm={6} md={6} lg={4}>
-              <MediaCard images={images3} text1="Arepa de huevo" text2="Caribe"/>
+              <MediaCard
+                images={images3}
+                text1="Arepa de huevo"
+                text2="Caribe"
+                text3="Bajo"
+                text4="40 Minutos"
+              />
             </Grid>
           </Grid>
         </Grid>

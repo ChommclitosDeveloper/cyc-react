@@ -55,7 +55,7 @@ const ActionAreaCard: React.FC<ActionAreaCardProps> = ({
         position: "relative",
         width: "100%",
         borderRadius: 5,
-        minHeight: "400px",
+        minHeight: "450px",
         display: "flex",
         flexDirection: "column",
         transition: "transform 0.3s, box-shadow 0.3s",
