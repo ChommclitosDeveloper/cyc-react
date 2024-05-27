@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import { Carousel } from "react-responsive-carousel";
 import { HoverRating } from "./HoverRating";
 import { Grid, Chip } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 interface ActionAreaCardProps {
   images: string[];
@@ -19,6 +20,13 @@ interface ActionAreaCardProps {
 }
 
 export const MediaCard: React.FC<ActionAreaCardProps> = ({ images, text1, text2, text3, text4 }) => {
+
+  const navigate = useNavigate(); // Hook for navigation
+
+  const handlePreparacionClick = () => {
+    navigate('/preparacion'); // Navigate to register route on click
+  };
+
   return (
     <Card sx={{ width: "100%", borderRadius: 5, minHeight:'550px' }}>
       <Carousel showThumbs={false} autoPlay interval={3000} infiniteLoop>
@@ -62,7 +70,7 @@ export const MediaCard: React.FC<ActionAreaCardProps> = ({ images, text1, text2,
       </CardContent>
       <CardActions sx={{alignContent:'center', justifyContent:'center'}}>
         
-        <Button sx={{
+        <Button onClick={handlePreparacionClick} sx={{
                   borderRadius: 3,
                   color: "black",
                   backgroundColor: "#ffbe58", // Cambia este valor al color que desees

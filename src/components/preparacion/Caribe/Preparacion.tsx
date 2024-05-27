@@ -7,10 +7,13 @@ import './Preparacion.css'
 
 const Preparacion = () => {
 
-    const navigate = useNavigate();
-
-  const handleFiltroCaribeClick = () => {
-    navigate('/filtrocaribe');
+  const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
+  const handleClose = () => setOpen(false);
+  
+  const handleGoBack = () => {
+      navigate(-1);
+      handleClose(); 
   };
   
   const handleNutrionClick = () => {
@@ -24,7 +27,7 @@ const Preparacion = () => {
   return (
     <div className='fondo'>
         <div className='botones-head'>
-        <button className='regresar' onClick={handleFiltroCaribeClick}>
+        <button className='regresar' onClick={handleGoBack}>
             <div className='icon'><TiArrowBack /></div>
             <div>Regresar</div>
         </button>

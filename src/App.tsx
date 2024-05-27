@@ -42,7 +42,7 @@ const AppContent: React.FC = () => {
           <Route path="/regiones/filtropacifica" element={<FiltroPacifica />} />
           <Route path="/preparacion" element={<Preparacion />} />
           <Route path="/nutricion" element={<ValorNutricional />} />
-          <Route path="/reseñahistorica" element={<Reseña />} />
+          <Route path="/reseñahistorica" element={<Reseña/>} />
           <Route path="/personalizadas/*" element={<Personalizadas />} />
           <Route path="formulario" element={<Formulario />} />
         </Routes>

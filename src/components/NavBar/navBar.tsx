@@ -137,6 +137,7 @@ export default function PersistentDrawerLeft({
           "& .MuiDrawer-paper": {
             width: drawerWidth,
             boxSizing: "border-box",
+            bgcolor: "#b2dafa",
           },
           p: 1,
         }}
@@ -156,20 +157,7 @@ export default function PersistentDrawerLeft({
         </DrawerHeader>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
+          {["Mis recetas", "Regiones", "Crear recetas", "Cerrar Sesion"].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon>
