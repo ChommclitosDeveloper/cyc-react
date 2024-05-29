@@ -81,6 +81,7 @@ const Personalizadas = () => {
               boxShadow: 1,
               borderRadius: 2,
               p: 1,
+              bgcolor:'white'
             }}
           >
             <Routes>

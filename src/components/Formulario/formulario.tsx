@@ -202,24 +202,24 @@ const FormStepper: React.FC = () => {
                             </Grid>
                           </Grid>
                         </Box>
-                        <FormHelperText sx={{color: 'white'}}>Duracion de la receta *</FormHelperText>
+                        <FormHelperText >Duracion de la receta *</FormHelperText>
                       </Grid>
                       <Grid item xs={8}>
                         <TagSelector
                           selectedTags={selectedTags}
                           handleTagChange={handleTagChange}
                         />
-                        <FormHelperText sx={{color: 'white'}}>
+                        <FormHelperText >
                           Etiquetas o palabras clave
                         </FormHelperText>
                       </Grid>
                       <Grid item xs={4}>
                         <NumberInputBasic />
-                        <FormHelperText sx={{color: 'white'}} >Comensales</FormHelperText>
+                        <FormHelperText >Comensales</FormHelperText>
                       </Grid>
                       <Grid item xs={8}>
                         <InputFileUpload />
-                        <FormHelperText sx={{color: 'white'}} >
+                        <FormHelperText  >
                           Cargar imagen para la portada
                         </FormHelperText>
                       </Grid>
@@ -253,11 +253,11 @@ const FormStepper: React.FC = () => {
                   </Grid>
                   <Grid item xs={3}>
                     <NumberInputBasic />
-                    <FormHelperText sx={{color: 'white'}} >Cantidad</FormHelperText>
+                    <FormHelperText  >Cantidad</FormHelperText>
                   </Grid>
                   <Grid item xs={6}>
                     <FormControlLabel 
-                      sx={{color: 'white'}}
+                      
                       control={<Checkbox />}
                       label="¿Incluir unidad de medida?"
                     />
@@ -268,7 +268,7 @@ const FormStepper: React.FC = () => {
                 <Grid container spacing={2}>
                   <Grid item xs={3}>
                     <NumberInputBasic />
-                    <FormHelperText sx={{color: 'white'}} >
+                    <FormHelperText  >
                       Cantidad(en unidad de medida) *
                     </FormHelperText>
                   </Grid>
