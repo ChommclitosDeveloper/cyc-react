@@ -9,7 +9,7 @@
 }
 
 .nutricion h1 {
-    background: linear-gradient(to right, rgba(0, 52, 210, 0.973), rgba(41, 162, 249, 0.5));
+    background-color: #77DD77;
     background-blend-mode: overlay;
     padding-left: 1rem;
     border-radius: 1rem;

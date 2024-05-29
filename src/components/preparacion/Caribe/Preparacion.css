@@ -15,7 +15,7 @@
 }
 
 .regresar {
-    background: transparent;
+    background-color: white;
     border: none;
     cursor: pointer;
     border: solid 2px;
@@ -34,7 +34,7 @@
 }
 
 .valor-nutricional {
-    background: transparent;
+    background-color: white;
     border: none;
     cursor: pointer;
     border: solid 2px;
@@ -60,8 +60,9 @@
     padding: 40px;
     border-radius: 2rem;
     border: solid 2px;
-    background: transparent;
-    backdrop-filter: blur(20px);
+    background-color: white;
+    /* background: transparent; */
+    /* backdrop-filter: blur(20px); */
 }
 
 .botones-tabla {

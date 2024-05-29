@@ -94,13 +94,13 @@ const Regiones = () => {
             alignItems="center"
           >
             <Grid item xs={12}>
-              <Typography fontWeight={"bold"} variant="h4" gutterBottom>
+              <Typography color={"white"} fontWeight={"bold"} variant="h4" gutterBottom>
                 Selecciona una región
               </Typography>
             </Grid>
             <Grid item xs={12}>
               <Typography
-                color={"gray"}
+                color={"white"}
                 fontWeight={"bold"}
                 variant="h6"
                 gutterBottom

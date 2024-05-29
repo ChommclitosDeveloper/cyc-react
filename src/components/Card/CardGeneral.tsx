@@ -64,7 +64,7 @@ const ActionAreaCard: React.FC<ActionAreaCardProps> = ({
         "&:hover": {
           transform: "scale(1.05)",
           boxShadow: "0 6px 20px rgba(0, 0, 0, 0.15)",
-          backgroundColor: "rgba(0, 0, 0, 0.04)", // color gris al pasar el mouse
+          // backgroundColor: "rgba(0, 0, 0, 0.04)", // color gris al pasar el mouse
         },
         "&:active": {
           transform: "scale(1)",

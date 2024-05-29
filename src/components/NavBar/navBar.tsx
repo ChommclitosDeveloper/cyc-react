@@ -101,7 +101,7 @@ export default function PersistentDrawerLeft({
         position="static"
         open={isMdUp && open}
         sx={{
-          bgcolor: "#b2dafa",
+          bgcolor: "#77DD77",
           borderRadius: 4,
           
         }}
@@ -137,7 +137,7 @@ export default function PersistentDrawerLeft({
           "& .MuiDrawer-paper": {
             width: drawerWidth,
             boxSizing: "border-box",
-            bgcolor: "#b2dafa",
+            bgcolor: "#77DD77",
           },
           p: 1,
         }}

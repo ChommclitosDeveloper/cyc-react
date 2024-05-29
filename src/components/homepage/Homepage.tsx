@@ -30,12 +30,12 @@ const Homepage = () => {
             alignItems="center"
           >
             <Grid item xs={12}>
-              <Typography fontWeight={"bold"} variant="h4" gutterBottom>
+              <Typography color={"white"} fontWeight={"bold"} variant="h4" gutterBottom>
                 Bienvenidos a RecetasCol
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography color={"gray"} fontWeight={"bold"} variant="h6" gutterBottom>
+              <Typography color={"white"} fontWeight={"bold"} variant="h6" gutterBottom>
                 Tu espacio favorito de recetas
               </Typography>
             </Grid>

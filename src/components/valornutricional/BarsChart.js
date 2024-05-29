@@ -55,7 +55,7 @@ var misoptions = {
             }
         },
         x: {
-            ticks: { color: 'rgba(34, 74, 197, 0.973)'}
+            ticks: { color: '#black'}
         }
     }
 };
@@ -66,7 +66,7 @@ var midata = {
         {
             label: 'Beneficios',
             data: beneficios,
-            backgroundColor: 'rgba(34, 74, 197, 0.973)'
+            backgroundColor: '#77DD77'
         }
     ]
 };
